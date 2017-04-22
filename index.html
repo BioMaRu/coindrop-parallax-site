@@ -43,6 +43,14 @@
   </div>
 
   <div id="scene3">
+    <img id="pipe" src="/assets/ground.svg" width="100%">
+    <img id="bank-flow" src="/assets/money.svg" width="100%">
+    <img id="money-blur" src="/assets/money-blur.png" width="100%">
+    <img id="coin-blur" src="/assets/coin-blur.png" width="100%">
+    <div id="text2">
+      This is awesome text too, Right?<br>
+      Yes, It very AWSM
+    </div>
   </div>
   <script>
     $(function() {
@@ -90,10 +98,42 @@
       })
       .triggerHook(1)
       .setTween(tweenCloud)
+      // .addIndicators()
+      .addTo(controller)
+
+      let tweenMoney = new TimelineMax ()
+			.add([
+        TweenMax.to('#money-blur', 1, {
+          top: -900,
+          ease: Linear.easeNone
+        }),
+        TweenMax.to('#coin-blur', 1, {
+          top: -1900,
+          ease: Linear.easeNone
+        }),
+        TweenMax.to('#text2', 1, {
+          top: 200,
+          ease: Linear.easeNone
+        })
+      ])
+      // Scene Money
+      let moneyScene = new ScrollMagic.Scene({
+        triggerElement: '#scene3',
+        duration: 4500
+      })
+      .triggerHook(1)
+      .setTween(tweenMoney)
       .addIndicators()
       .addTo(controller)
 
-      
+            // Scene Money
+      let moneyPin = new ScrollMagic.Scene({
+        triggerElement: '#scene3'
+      })
+      .triggerHook(0)
+      .setPin('#bank-flow')
+      .addIndicators()
+      .addTo(controller)
     })
   </script>
 </body>

@@ -85,7 +85,7 @@ html, body {
     background-color: #03a9f4;
     #cup {
       position: absolute;
-      z-index: 10;
+      z-index: 20;
       bottom: -13px;
     }
     #city-scape {
@@ -102,6 +102,22 @@ html, body {
   }
 }
 #scene3 {
+  position: relative;
   height: 1000px;
-  background-color: #977799;
+  #pipe {
+    position: absolute;
+    z-index: 15;
+  }
+  #bank-flow {
+    position: absolute;
+    z-index: 14;
+  }
+  #money-blur {
+    position: absolute;
+    z-index: 17;
+  }
+  #coin-blur {
+      position: absolute;
+    z-index: 16;
+  }
 }
