@@ -64,6 +64,10 @@
       Yes, It very AWSM
     </div>
   </div>
+
+  <div id="scene5">
+    sds
+  </div>
   <script>
     $(function() {
 
@@ -184,7 +188,7 @@
         let tweenFallCash = new TimelineMax ()
         .add([
           TweenMax.fromTo('#fall-cash', 0.5, {
-            top: -720,
+            top: -790,
             scale: 0.9,
             yoyo: true,
             ease: Linear.easeNone
@@ -192,13 +196,6 @@
             top: 0,
             scale: 0.9,
             yoyo: true,
-            ease: Linear.easeNone
-          }),
-          TweenMax.fromTo('#text3', 1, {
-            top: 0,
-            ease: Linear.easeNone
-          },{
-            top: 0,
             ease: Linear.easeNone
           })
         ])
@@ -211,7 +208,7 @@
         .addIndicators()
         .addTo(controller)
 
-        // Fall Cash
+        // Rise Cash
         let tweenRiseCash = new TimelineMax ()
         .add([
           TweenMax.fromTo('#fall-cash', 0.5, {
@@ -220,7 +217,7 @@
             yoyo: true,
             ease: Linear.easeNone
           },{
-            top: -720,
+            top: -790,
             scale: 0.9,
             yoyo: true,
             ease: Linear.easeNone

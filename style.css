@@ -115,7 +115,7 @@ html, body {
   position: relative;
   text-align: center;
   top: -1px;
-  height: 3000px;
+  height: 1800px;
   background-color: #302d4c;
   overflow: hidden; }
   #scene4 #fall-cash {
@@ -128,3 +128,10 @@ html, body {
     z-index: 55;
     top: 800px;
     text-align: center; }
+
+#scene5 {
+  position: relative;
+  text-align: center;
+  top: -1px;
+  height: 1800px;
+  background-color: #302d49; }
