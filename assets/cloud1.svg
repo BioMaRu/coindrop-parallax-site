@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="373px" height="196px" viewBox="0 0 373 196" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 43.2 (39069) - http://www.bohemiancoding.com/sketch -->
+    <title>cloud1</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="184.257" height="99"></rect>
+        <rect id="path-3" x="0.257" y="0.65" width="309.61" height="166.35"></rect>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="cloud1">
+            <g id="Group" opacity="0.800003">
+                <g id="Clipped">
+                    <mask id="mask-2" fill="white">
+                        <use xlink:href="#path-1"></use>
+                    </mask>
+                    <g id="Rectangle-path"></g>
+                    <path d="M174.708,99 L1.764,99 C0.62,95.065 9.99200722e-15,90.958 9.99200722e-15,86.727 C9.99200722e-15,63.749 17.898,44.293 42.622,37.644 C48.479,15.958 68.279,7.10542736e-15 91.814,7.10542736e-15 C119.962,7.10542736e-15 142.775,22.818 142.775,50.962 C142.775,51.166 142.764,51.37 142.764,51.575 C166.439,54.403 184.257,66.687 184.257,81.416 C184.257,87.969 180.716,94.033 174.708,99" id="Shape" fill="#EDF7F9" fill-rule="nonzero" mask="url(#mask-2)"></path>
+                </g>
+            </g>
+            <path d="M79.961,89.248 C79.961,47.69 113.651,14 155.21,14 C196.77,14 230.457,47.69 230.457,89.248 C230.457,130.806 196.77,164.496 155.21,164.496 C113.651,164.496 79.961,130.806 79.961,89.248" id="Shape" fill="#FFCC5A" fill-rule="nonzero"></path>
+            <g id="Clipped" transform="translate(63.000000, 29.000000)">
+                <mask id="mask-4" fill="white">
+                    <use xlink:href="#path-3"></use>
+                </mask>
+                <g id="Rectangle-path"></g>
+                <path d="M16.302,167 L306.9,167 C308.822,160.388 309.864,153.486 309.864,146.377 C309.864,107.768 279.788,75.077 238.246,63.903 C228.404,27.464 195.133,0.65 155.588,0.65 C108.292,0.65 69.958,38.991 69.958,86.282 C69.958,86.625 69.979,86.968 69.979,87.312 C30.196,92.064 0.257,112.705 0.257,137.454 C0.257,148.464 6.207,158.654 16.302,167" id="Shape" fill="#EDF7F9" fill-rule="nonzero" mask="url(#mask-4)"></path>
+            </g>
+        </g>
+    </g>
+</svg>

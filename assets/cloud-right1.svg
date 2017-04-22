@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="226px" height="94px" viewBox="0 0 226 94" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 43.2 (39069) - http://www.bohemiancoding.com/sketch -->
+    <title>cloud-right1</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0.001" y="0.003" width="225.79" height="93.91"></rect>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.800003">
+        <g id="cloud-right1">
+            <g id="Group">
+                <g id="Clipped">
+                    <mask id="mask-2" fill="white">
+                        <use xlink:href="#path-1"></use>
+                    </mask>
+                    <g id="Rectangle-path"></g>
+                    <path d="M46.957,0 L225.791,0 L225.791,93.916 L46.957,93.916 C21.024,93.916 -7.10542736e-15,72.891 -7.10542736e-15,46.958 C-7.10542736e-15,21.023 21.024,0 46.957,0" id="Shape" fill="#EDF7F9" fill-rule="nonzero" mask="url(#mask-2)"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
