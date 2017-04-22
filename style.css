@@ -83,7 +83,7 @@ html, body {
 #scene3 {
   position: relative; }
   #scene3 #pipe {
-    position: absolute;
+    position: relative;
     z-index: 15; }
   #scene3 #bank-flow {
     top: 0;
@@ -112,12 +112,19 @@ html, body {
     position: absolute; }
 
 #scene4 {
-  height: 1000px; }
-
-.clearfix:after {
-  content: " ";
-  /* Older browser do not support empty content */
-  visibility: hidden;
-  display: block;
-  height: 0;
-  clear: both; }
+  position: relative;
+  text-align: center;
+  top: -1px;
+  height: 3000px;
+  background-color: #302d4c;
+  overflow: hidden; }
+  #scene4 #fall-cash {
+    position: fixed; }
+  #scene4 #text4 {
+    font-size: 3em;
+    color: blueviolet;
+    text-shadow: 2px 2px #c273d0;
+    position: absolute;
+    z-index: 55;
+    top: 800px;
+    text-align: center; }
