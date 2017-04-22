@@ -51,13 +51,23 @@
       This is awesome text too, Right?<br>
       Yes, It very AWSM
     </div>
+    <div id="text3">
+      This is also awesome text too, Right?<br>
+      Yes, It very AWSM
+    </div>
+  </div>
+
+  <div id="scene4">
+    d
   </div>
   <script>
     $(function() {
 
       var controller = new ScrollMagic.Controller({
-        loglevel: 3
+        loglevel: 2
       });
+
+
 
       //Coin
       var coinTween = new TweenMax.fromTo('#coin', 1, {
@@ -74,7 +84,9 @@
         repeat: -1
       })
 
-      //cloud layer1
+
+
+      // cloud
       let tweenCloud = new TimelineMax ()
 			.add([
         TweenMax.to('.cloud-layer-1', 1, {
@@ -90,8 +102,6 @@
           ease: Linear.easeNone
         })
       ])
-
-      // Scene Cloud
       let cloudScene = new ScrollMagic.Scene({
         triggerElement: '.cloud-container',
         duration: 1500
@@ -101,39 +111,61 @@
       // .addIndicators()
       .addTo(controller)
 
-      let tweenMoney = new TimelineMax ()
-			.add([
-        TweenMax.to('#money-blur', 1, {
-          top: -900,
-          ease: Linear.easeNone
-        }),
-        TweenMax.to('#coin-blur', 1, {
-          top: -1900,
-          ease: Linear.easeNone
-        }),
-        TweenMax.to('#text2', 1, {
-          top: 200,
-          ease: Linear.easeNone
-        })
-      ])
-      // Scene Money
-      let moneyScene = new ScrollMagic.Scene({
-        triggerElement: '#scene3',
-        duration: 4500
-      })
-      .triggerHook(1)
-      .setTween(tweenMoney)
-      .addIndicators()
-      .addTo(controller)
+      
+      // Pipe
+      let image = new Image()
+      image.src = '/assets/ground.svg'
+      image.onload = function () {
+        let h = $('#pipe').height()
+        
+        // Scene Money
+        let tweenMoney = new TimelineMax ()
+        .add([
+          TweenMax.to('#money-blur', 1, {
+            top: -900,
+            ease: Linear.easeNone
+          }),
+          TweenMax.to('#coin-blur', 1, {
+            top: -1900,
+            ease: Linear.easeNone
+          }),
+          TweenMax.fromTo('#text2', 1, {
+            top: (h * 30) / 100,
+            ease: Linear.easeNone
+          },{
+            top: (h * 50) / 100,
+            ease: Linear.easeNone
+          }),
+          TweenMax.fromTo('#text3', 1, {
+            top: (h * 60) / 100,
+            ease: Linear.easeNone
+          },{
+            top: (h * 80) / 100,
+            ease: Linear.easeNone
+          })
+        ])
 
-            // Scene Money
-      let moneyPin = new ScrollMagic.Scene({
-        triggerElement: '#scene3'
-      })
-      .triggerHook(0)
-      .setPin('#bank-flow')
-      .addIndicators()
-      .addTo(controller)
+        let moneyScene = new ScrollMagic.Scene({
+          triggerElement: '#scene3',
+          duration: 4500
+        })
+        .triggerHook(1)
+        .setTween(tweenMoney)
+        .addIndicators()
+        .addTo(controller)
+
+        //scene flow
+        let moneyPin = new ScrollMagic.Scene({
+          triggerElement: '#pipe',
+          duration: h - 60
+        })
+        .triggerHook(0)
+        .setPin('#bank-flow')
+        .addIndicators()
+        .addTo(controller)
+      }
+
+
     })
   </script>
 </body>

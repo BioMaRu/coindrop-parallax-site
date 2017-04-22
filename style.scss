@@ -103,21 +103,50 @@ html, body {
 }
 #scene3 {
   position: relative;
-  height: 1000px;
   #pipe {
     position: absolute;
     z-index: 15;
   }
   #bank-flow {
+    top: 0;
     position: absolute;
     z-index: 14;
   }
   #money-blur {
+    top: 0;
     position: absolute;
     z-index: 17;
   }
   #coin-blur {
-      position: absolute;
+    top: 0;
+    position: absolute;
     z-index: 16;
   }
+  #text2 {
+    font-size: 3em;
+    color: blueviolet;
+    text-shadow: 2px 2px #c273d0;
+    text-align: center;
+    z-index: 99;
+    position: absolute;
+  }
+  #text3 {
+    font-size: 3em;
+    color: blueviolet;
+    text-shadow: 2px 2px #c273d0;
+    z-index: 99;
+    position: absolute;
+  }
+}
+
+#scene4 {
+  height: 1000px;
+}
+
+.clearfix:after {
+   content: " "; /* Older browser do not support empty content */
+   visibility: hidden;
+   display: block;
+   height: 0;
+   clear: both;
 }
