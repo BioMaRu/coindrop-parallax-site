@@ -2,6 +2,17 @@ html, body {
   margin: 0;
   padding: 0; }
 
+.center {
+  margin: auto;
+  left: 0;
+  right: 0; }
+
+.left {
+  left: 0; }
+
+.right {
+  right: 0; }
+
 #scene1 {
   outline: 1px dashed orange;
   background-color: #03a9f4; }
@@ -20,22 +31,20 @@ html, body {
   #scene1 .cloud-container {
     position: relative;
     height: 800px; }
-    #scene1 .cloud-container .center {
-      margin: auto;
-      left: 0;
-      right: 0; }
-    #scene1 .cloud-container .left {
-      left: 0; }
-    #scene1 .cloud-container .right {
-      right: 0; }
-  #scene1 img.cloud-layer-1 {
+  #scene1 img.cloud-layer-1,
+  #scene1 #text1 {
     position: absolute;
     z-index: 999; }
+  #scene1 #text1 {
+    font-size: 3em;
+    text-shadow: 2px 2px 2px white;
+    text-align: center;
+    transform: translateY(450px); }
   #scene1 img.cloud-layer-2 {
     position: absolute;
     z-index: 4; }
   #scene1 img#cloud1 {
-    transform: translate(120px, 450px); }
+    transform: translate(120px, 250px); }
   #scene1 img#cloud2 {
     transform: translateX(-150px); }
   #scene1 img#cloud3 {
@@ -44,8 +53,31 @@ html, body {
     transform: translateY(350px); }
   #scene1 img#cloud5 {
     transform: translateY(650px); }
+  #scene1 img#cloud6 {
+    transform: translate(-100px, 750px); }
+  #scene1 img#cloud7 {
+    transform: translateY(1350px); }
+  #scene1 img#cloud8 {
+    transform: translateY(1450px); }
 
-#block {
-  padding: 10px;
-  border: 1px solid black;
-  font-family: Helvetica; }
+#scene2 .city-container {
+  position: relative;
+  height: 600px;
+  background-color: #03a9f4; }
+  #scene2 .city-container #cup {
+    position: absolute;
+    z-index: 10;
+    bottom: -13px; }
+  #scene2 .city-container #city-scape {
+    position: absolute;
+    bottom: 0;
+    z-index: 4; }
+  #scene2 .city-container #building {
+    max-width: 1000px;
+    position: absolute;
+    z-index: 7;
+    bottom: 0; }
+
+#scene3 {
+  height: 1000px;
+  background-color: #977799; }

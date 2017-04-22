@@ -12,21 +12,37 @@
 </head>
 <body>
   <div id="scene1">
-    <div>
-      <div class="coin-container">
-        <img id="coin" src="/assets/coin.svg">
-      </div>
-      <div class="first-stage">
-        <div>Hello</div>
-      </div>
-      <div class="cloud-container">
-        <img id="cloud1" class="cloud-layer-1 center" src="/assets/cloud1.svg">
-        <img id="cloud2" class="cloud-layer-1 center" src="/assets/cloud2.svg">
-        <img id="cloud3" class="cloud-layer-2 left" src="/assets/cloud-left1.svg">
-        <img id="cloud4" class="cloud-layer-2 right" src="/assets/cloud-right1.svg">
-        <img id="cloud5" class="cloud-layer-2 left" src="/assets/cloud-left2.svg">
+    <div class="coin-container">
+      <img id="coin" src="/assets/coin.svg" width="100">
+    </div>
+    <div class="first-stage">
+      <div>คนจ้างยังไม่มี Text ให้ แต่ก็ คงเป็นอะไรไม่ยาวมา<br>ยังไงก็ลอง Scroll ดูแล้วกันนะ</div>
+    </div>
+    <div class="cloud-container">
+      <img id="cloud1" class="cloud-layer-1 center" src="/assets/cloud1.svg">
+      <img id="cloud2" class="cloud-layer-1 center" src="/assets/cloud2.svg" width="250px">
+      <img id="cloud3" class="cloud-layer-2 left" src="/assets/cloud-left1.svg" width="100px">
+      <img id="cloud4" class="cloud-layer-2 right" src="/assets/cloud-right1.svg" width="100px">
+      <img id="cloud5" class="cloud-layer-2 left" src="/assets/cloud-left2.svg" width="100px">
+      <img id="cloud6" class="cloud-layer-1 center" src="/assets/cloud2.svg">
+      <img id="cloud7" class="cloud-layer-2 left" src="/assets/cloud-left1.svg" width="100px">
+      <img id="cloud8" class="cloud-layer-2 right" src="/assets/cloud-right1.svg" width="100px">
+      <div id="text1" class="center">
+        This is awesome text, OK?<br>
+        Yes, It very AWSM
       </div>
     </div>
+  </div>
+
+  <div id="scene2">
+    <div class="city-container">
+      <img id="cup" class="center" src="/assets/cup.svg" width="250px">
+      <img id="building" class="center" src="/assets/city1.png" width="100%">
+      <img id="city-scape" class="center" src="/assets/city2.svg" width="100%">
+    </div>
+  </div>
+
+  <div id="scene3">
   </div>
   <script>
     $(function() {
@@ -51,7 +67,7 @@
       })
 
       //cloud layer1
-      let tween = new TimelineMax ()
+      let tweenCloud = new TimelineMax ()
 			.add([
         TweenMax.to('.cloud-layer-1', 1, {
           top: -100,
@@ -60,19 +76,25 @@
         TweenMax.to('.cloud-layer-2', 1, {
           top: -700,
           ease: Linear.easeNone
+        }),
+        TweenMax.to('#text1', 1, {
+          top: 200,
+          ease: Linear.easeNone
         })
       ])
 
       // Scene Cloud
-      var containerScene = new ScrollMagic.Scene({
+      let cloudScene = new ScrollMagic.Scene({
         triggerElement: '.cloud-container',
-        duration: 1100
+        duration: 1500
       })
       .triggerHook(1)
-      .setTween(tween)
+      .setTween(tweenCloud)
       .addIndicators()
       .addTo(controller)
-    });
+
+      
+    })
   </script>
 </body>
 </html>
