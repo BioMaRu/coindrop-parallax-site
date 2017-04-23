@@ -87,12 +87,35 @@
 
   <div id="scene7">
     <div class="black-container">
+      <div class="lamp-container">
+        <div id="text6">
+          <div class="t-left">
+            6666 Well o Left Yo Yo
+          </div>
+          <div class="t-right">
+           6666 Hello Right
+          </div>
+        </div>
+        <div id="text7">
+          <div class="t-left">
+            Well o LeftYo Yo
+          </div>
+          <div class="t-right">
+            Hello Right
+          </div>
+        </div>
+        <img id="lamp" src="/assets/lamp.svg">
+      </div>
       <img id="black" src="/assets/black.svg">
       <div id="text5">
         XXXXXXXXXXXXXXXXX <br>
         XXXXXXXXXXXXXXXX
       </div>
     </div>
+  </div>
+
+  <div id="scene8">
+
   </div>
 
   <script>
@@ -272,6 +295,9 @@
             left: -1000,
             ease: Power2.easeInOut
           }),
+          TweenMax.to('#coin',0.1, {
+            opacity: 0
+          })
         ])
         let handTween = new ScrollMagic.Scene({
           triggerElement: '#hand'
@@ -295,7 +321,8 @@
           })
         ])
         let heroTween = new ScrollMagic.Scene({
-          triggerElement: '#hero'
+          triggerElement: '#hero',
+          duration: 300
         })
         .triggerHook(.60)
         .setTween(tweenHero)
@@ -310,7 +337,8 @@
           })
         ])
         let heroTween2 = new ScrollMagic.Scene({
-          triggerElement: '#hero'
+          triggerElement: '#hero',
+          duration: 500
         })
         .triggerHook(.60)
         .offset(500)
@@ -380,9 +408,10 @@
           
         ])
         let tvTween = new ScrollMagic.Scene({
-          triggerElement: '#scene6'
+          triggerElement: '#scene6',
+          duration: 300
         })
-        .triggerHook(.5)
+        .triggerHook(1)
         .setTween(tweenTv)
         // .addIndicators()
         .addTo(controller)
@@ -391,10 +420,10 @@
         let tweenBlack = new TimelineMax ()
         .add([
           TweenMax.fromTo('#black', 1, {
-            transform: 'scale(15)',
+            transform: 'scale(25)',
             ease: Power2.easeInOut
           },{
-            transform: 'scale(2)',
+            transform: 'scale(3.0)',
             ease: Power2.easeInOut
           }),
           TweenMax.to('#scene2', 1, {
@@ -411,9 +440,9 @@
           triggerElement: '#scene7',
           duration: 500
         })
-        .triggerHook(.5)
+        .triggerHook(9)
         .setTween(tweenBlack)
-        .addIndicators()
+        // .addIndicators()
         .addTo(controller)
 
         // Text5
@@ -421,19 +450,138 @@
         .add([
           TweenMax.fromTo('#text5', 1, {
             opacity: 0,
+            ease: Power1.easeInOut,
+            immediateRender: false,
+            yoyo: true
+          },{
+            opacity: 1,
+            ease: Power1.easeInOut,
+            immediateRender: false,
+            yoyo: true
+          })
+        ])
+        let text5Tween = new ScrollMagic.Scene({
+          triggerElement: '#scene7',
+          duration: 300
+        })
+        .triggerHook(9)
+        .offset(300)
+        .setTween(tweenText5)
+        // .addIndicators()
+        .addTo(controller)
+
+        // Lamp
+        let tweenLamp = new TimelineMax ()
+        .add([
+          TweenMax.fromTo('#lamp', 1, {
+            opacity: 0,
+            ease: Power1.easeInOut
+          },{
+            opacity: 1,
+            ease: Power1.easeInOut
+          }),
+          TweenMax.fromTo('#text5', 1, {
+            opacity: 1,
+            ease: Power1.easeInOut,
+            immediateRender: false,
+            yoyo: true
+          },{
+            opacity: 0,
+            ease: Power1.easeInOut,
+            immediateRender: false,
+            yoyo: true
+          })
+        ])
+        let lampTween = new ScrollMagic.Scene({
+          triggerElement: '#scene7',
+          duration: 300
+        })
+        .triggerHook(.9)
+        .offset(600)
+        .setTween(tweenLamp)
+        // .addIndicators()
+        .addTo(controller)
+
+        // Text6
+        let tweenText6 = new TimelineMax ()
+        .add([
+          TweenMax.fromTo('#text6', .5, {
+            opacity: 0,
             ease: Power1.easeInOut
           },{
             opacity: 1,
             ease: Power1.easeInOut
           })
         ])
-        let text5Tween = new ScrollMagic.Scene({
+        let text6Tween = new ScrollMagic.Scene({
           triggerElement: '#scene7',
-          duration: 500
+          duration: 300
         })
         .triggerHook(.5)
-        .offset(500)
-        .setTween(tweenText5)
+        .offset(1000)
+        .setTween(tweenText6)
+        .addIndicators()
+        .addTo(controller)
+
+        // Text7
+        let tweenText7 = new TimelineMax ()
+        .add([
+          TweenMax.fromTo('#text7', 1, {
+            opacity: 0,
+            ease: Power1.easeInOut
+          },{
+            opacity: 1,
+            ease: Power1.easeInOut
+          }),
+          TweenMax.fromTo('#text6', 1, {
+            opacity: 1,
+            ease: Power1.easeInOut,
+            immediateRender: false
+          },{
+            opacity: 0,
+            ease: Power1.easeInOut
+          })
+        ])
+        let text7Tween = new ScrollMagic.Scene({
+          triggerElement: '#scene7',
+          duration: 300
+        })
+        .triggerHook(.5)
+        .offset(1350)
+        .setTween(tweenText7)
+        .addIndicators()
+        .addTo(controller)
+
+
+        // Black out
+        let tweenBlackout = new TimelineMax ()
+        .add([
+          TweenMax.fromTo('#black', 1, {
+            transform: 'scale(3)',
+            immediateRender: false,
+            ease: Power2.easeInOut
+          },{
+            transform: 'scale(25)',
+            immediateRender: false,
+            ease: Power2.easeInOut
+          }),
+          TweenMax.fromTo('#tv', .1, {
+            opacity: 1
+          },{
+            opacity: 0
+          }),
+          TweenMax.fromTo('.cage-container', 1, {
+            opacity: 1
+          },{
+            opacity: 0
+          })
+        ])
+        let blackoutTween = new ScrollMagic.Scene({
+          triggerElement: '#scene8',
+          duration: 300
+        })
+        .triggerHook(.5)
+        .setTween(tweenBlackout)
         .addIndicators()
         .addTo(controller)
       }

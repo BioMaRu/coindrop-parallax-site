@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="390px" height="740px" viewBox="0 0 390 740" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 43.2 (39069) - http://www.bohemiancoding.com/sketch -->
+    <title>Group</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <circle id="path-1" cx="142" cy="142" r="142"></circle>
+        <filter x="-28.3%" y="-29.0%" width="156.7%" height="156.7%" filterUnits="objectBoundingBox" id="filter-2">
+            <feMorphology radius="14" operator="dilate" in="SourceAlpha" result="shadowSpreadOuter1"></feMorphology>
+            <feOffset dx="0" dy="-2" in="shadowSpreadOuter1" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="12.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 1   0 0 0 0 0.929456019   0 0 0 0 0.759509154  0 0 0 1 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group" transform="translate(53.000000, 55.000000)">
+            <g id="Oval">
+                <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                <use fill="#FFD35D" fill-rule="evenodd" xlink:href="#path-1"></use>
+            </g>
+            <rect id="Rectangle-4" fill="#FFFFFF" transform="translate(123.569654, 244.326511) rotate(-20.000000) translate(-123.569654, -244.326511) " x="114.569654" y="173.826511" width="18" height="141" rx="9"></rect>
+            <rect id="Rectangle-4" fill="#FFFFFF" transform="translate(160.940075, 243.427142) rotate(-345.000000) translate(-160.940075, -243.427142) " x="151.940075" y="172.927142" width="18" height="141" rx="9"></rect>
+            <rect id="Rectangle-2" fill="#263447" x="134" y="335" width="20" height="350"></rect>
+            <rect id="Rectangle" fill="#D6D6D6" x="89.8945312" y="296" width="105.996094" height="18"></rect>
+            <path d="M89.8945312,317 L195.890625,317 L195.890625,326 C195.890625,330.970563 191.864885,335 186.899182,335 L98.8859743,335 C93.9201374,335 89.8945312,330.971656 89.8945312,326 L89.8945312,317 Z" id="Rectangle" fill="#D6D6D6"></path>
+            <rect id="Rectangle" fill="#E7E7E7" x="78.6074219" y="278" width="127.785156" height="18" rx="9"></rect>
+            <rect id="Rectangle" fill="#E7E7E7" x="78.6074219" y="306" width="127.785156" height="18" rx="9"></rect>
+            <path d="M100.555556,335 L186.555556,335 C186.555556,335 208.055556,365.75 186.555556,376 C165.055556,386.25 122.055556,386.25 100.555556,376 C79.0555556,365.75 100.555556,335 100.555556,335 Z" id="Rectangle-3" fill="#243446"></path>
+        </g>
+    </g>
+</svg>

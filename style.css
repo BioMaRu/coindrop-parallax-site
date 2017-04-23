@@ -117,7 +117,7 @@ html, body {
   z-index: -1;
   top: -1px;
   height: 1800px;
-  background-color: #302d4c;
+  background-color: #161435;
   overflow: hidden; }
   #scene4 #fall-cash {
     position: fixed; }
@@ -135,7 +135,7 @@ html, body {
   top: -1px;
   height: 1800px;
   width: 100%;
-  background-color: #302d49; }
+  background-color: #161435; }
   #scene5 #hand {
     position: relative;
     transform: translateX(-235px);
@@ -172,13 +172,15 @@ html, body {
       z-index: 999; }
 
 #scene6 {
-  height: 1000px;
+  height: 700px;
   width: 100%;
-  background-color: bisque; }
+  position: relative;
+  top: -1px;
+  background-color: #161435; }
   #scene6 .tv-container {
     top: 0;
     position: fixed;
-    width: 100vw;
+    width: 100%;
     height: 100vh;
     z-index: 9999; }
     #scene6 .tv-container #tv {
@@ -192,9 +194,9 @@ html, body {
 
 #scene7 {
   position: relative;
-  height: 1800px;
+  height: 1900px;
   width: 100%;
-  background-color: skyblue; }
+  background-color: white; }
   #scene7 .black-container {
     top: 0;
     position: fixed;
@@ -205,13 +207,78 @@ html, body {
       width: 100%;
       height: 100%;
       transform: scale(15);
-      z-index: 2; }
+      z-index: 3; }
+    #scene7 .black-container .lamp-container {
+      width: 100%;
+      height: 100vh;
+      position: absolute;
+      z-index: 4; }
+      #scene7 .black-container .lamp-container #lamp {
+        font-size: 3em;
+        position: absolute;
+        margin: auto;
+        left: 0;
+        right: 0;
+        top: 160px;
+        transform: scale(0.8); }
+      #scene7 .black-container .lamp-container #text6 {
+        position: absolute;
+        display: flex;
+        width: 100%;
+        color: white;
+        justify-content: space-around;
+        margin: auto;
+        top: 0;
+        bottom: 0;
+        opacity: 0; }
+        #scene7 .black-container .lamp-container #text6 .t-left {
+          flex: 1;
+          display: flex;
+          align-items: center;
+          justify-content: flex-end;
+          text-align: right;
+          margin-right: 30vw;
+          font-size: 2em; }
+        #scene7 .black-container .lamp-container #text6 .t-right {
+          flex: 1;
+          display: flex;
+          align-items: center;
+          font-size: 2em; }
+      #scene7 .black-container .lamp-container #text7 {
+        position: absolute;
+        display: flex;
+        width: 100%;
+        color: white;
+        justify-content: space-around;
+        margin: auto;
+        top: 0;
+        bottom: 0;
+        opacity: 0; }
+        #scene7 .black-container .lamp-container #text7 .t-left {
+          flex: 1;
+          display: flex;
+          align-items: center;
+          justify-content: flex-end;
+          text-align: right;
+          margin-right: 30vw;
+          font-size: 2em; }
+        #scene7 .black-container .lamp-container #text7 .t-right {
+          flex: 1;
+          display: flex;
+          align-items: center;
+          font-size: 2em; }
     #scene7 .black-container #text5 {
       font-size: 2em;
       text-align: center;
       position: absolute;
       width: 100%;
-      z-index: 3;
+      z-index: 5;
       color: white;
       bottom: 100px;
       opacity: 0; }
+
+#scene8 {
+  position: relative;
+  height: 800px;
+  width: 100%;
+  background-color: white; }
