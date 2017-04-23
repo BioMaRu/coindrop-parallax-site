@@ -164,19 +164,51 @@ html, body {
 
 #scene5 {
   position: relative;
-  text-align: center;
+  // text-align: center;
   top: -1px;
   height: 1800px;
+  width: 100%;
   background-color: #302d49;
   #hand {
     position: relative;
     transform: translateX(-235px);
     z-index: 999
   }
-  #hero {}
-  #cage-container {
-    #cage-top {}
-    #boy {}
-    #cage-stand {}
+  #hero {
+    position: relative;
+    width: 600px;
+    max-width: 100%;
+    z-index: 99;
+    margin: auto;
+    right: -1000px;
   }
+  #cage-container {
+    top: 50%;
+    transform: translateY(-50%) scale(.8);
+    width: 100%;
+    position: fixed;
+    text-align: center;
+    display: block;
+    z-index: 999;
+    #cage-top {
+      position: absolute;
+      top: -250px;
+      margin: auto;
+      z-index: 999;
+    }
+    #boy {
+      position: relative;
+    }
+    #cage-stand {
+      position: absolute;
+      margin: auto;
+      top: 350px;
+      z-index: 999;
+    }
+  }
+}
+
+#scene6 {
+  height: 1800px;
+  background-color: bisque;
 }
