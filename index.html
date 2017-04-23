@@ -84,6 +84,17 @@
       <img id="tv" src="assets/tv.svg" >
     </div>
   </div>
+
+  <div id="scene7">
+    <div class="black-container">
+      <img id="black" src="/assets/black.svg">
+      <div id="text5">
+        XXXXXXXXXXXXXXXXX <br>
+        XXXXXXXXXXXXXXXX
+      </div>
+    </div>
+  </div>
+
   <script>
     $(function() {
       
@@ -373,6 +384,56 @@
         })
         .triggerHook(.5)
         .setTween(tweenTv)
+        // .addIndicators()
+        .addTo(controller)
+
+        // Black
+        let tweenBlack = new TimelineMax ()
+        .add([
+          TweenMax.fromTo('#black', 1, {
+            transform: 'scale(15)',
+            ease: Power2.easeInOut
+          },{
+            transform: 'scale(2)',
+            ease: Power2.easeInOut
+          }),
+          TweenMax.to('#scene2', 1, {
+            opacity: 0
+          }),
+          TweenMax.to('#scene3', 1, {
+            opacity: 0
+          }),
+          TweenMax.to('#scene4', 1, {
+            opacity: 0
+          })
+        ])
+        let blackTween = new ScrollMagic.Scene({
+          triggerElement: '#scene7',
+          duration: 500
+        })
+        .triggerHook(.5)
+        .setTween(tweenBlack)
+        .addIndicators()
+        .addTo(controller)
+
+        // Text5
+        let tweenText5 = new TimelineMax ()
+        .add([
+          TweenMax.fromTo('#text5', 1, {
+            opacity: 0,
+            ease: Power1.easeInOut
+          },{
+            opacity: 1,
+            ease: Power1.easeInOut
+          })
+        ])
+        let text5Tween = new ScrollMagic.Scene({
+          triggerElement: '#scene7',
+          duration: 500
+        })
+        .triggerHook(.5)
+        .offset(500)
+        .setTween(tweenText5)
         .addIndicators()
         .addTo(controller)
       }

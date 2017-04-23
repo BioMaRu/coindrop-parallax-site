@@ -172,7 +172,7 @@ html, body {
       z-index: 999; }
 
 #scene6 {
-  height: 1800px;
+  height: 1000px;
   width: 100%;
   background-color: bisque; }
   #scene6 .tv-container {
@@ -189,3 +189,29 @@ html, body {
       width: 90%;
       height: 90%;
       object-fit: scale-down; }
+
+#scene7 {
+  position: relative;
+  height: 1800px;
+  width: 100%;
+  background-color: skyblue; }
+  #scene7 .black-container {
+    top: 0;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 99999; }
+    #scene7 .black-container #black {
+      width: 100%;
+      height: 100%;
+      transform: scale(15);
+      z-index: 2; }
+    #scene7 .black-container #text5 {
+      font-size: 2em;
+      text-align: center;
+      position: absolute;
+      width: 100%;
+      z-index: 3;
+      color: white;
+      bottom: 100px;
+      opacity: 0; }
