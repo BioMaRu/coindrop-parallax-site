@@ -142,6 +142,7 @@ html, body {
 #scene4 {
   position: relative;
   text-align: center;
+  z-index: -1;
   top: -1px;
   height: 1800px;
   background-color: #302d4c;
@@ -167,4 +168,15 @@ html, body {
   top: -1px;
   height: 1800px;
   background-color: #302d49;
+  #hand {
+    position: relative;
+    transform: translateX(-235px);
+    z-index: 999
+  }
+  #hero {}
+  #cage-container {
+    #cage-top {}
+    #boy {}
+    #cage-stand {}
+  }
 }

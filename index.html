@@ -66,17 +66,28 @@
   </div>
 
   <div id="scene5">
-    sds
+    <img id="hand" src="/assets/hand.svg"> <br>
+    <img id="hero" src="/assets/hero.svg"> <br>
+    <div id="cage-container" class="cage-container">
+      <img id="cage-top" src="/assets/cage-top.svg">
+      <img id="boy" src="/assets/boy.svg">
+      <img id="cage-stand" src="/assets/cage-stand.svg">
+    </div>
   </div>
   <script>
     $(function() {
-
+      
+      // Animation Controller
       var controller = new ScrollMagic.Controller({
         loglevel: 2
-      });
+      })
 
+      // Srt Screen to top when refresh
+      window.setTimeout(function () {
+        $('body').scrollTop(0)
+      }, 100)
 
-      //Coin
+      // Coin Animation (Inf.)
       var coinTween = new TweenMax.fromTo('#coin', 1, {
         rotation: "-50deg",
         ease: Power1.easeInOut,
@@ -90,6 +101,8 @@
         repeatDelay: 0.2,
         repeat: -1
       })
+
+      // Float Cash Animation (Inf.)
       var fallTween = new TweenMax.fromTo('#fall-cash', 1.5, {
         transform: "translateY(0px)",
         ease: Power1.easeInOut,
@@ -105,7 +118,7 @@
       })
 
 
-      // cloud
+      // Cloud scene
       let tweenCloud = new TimelineMax ()
 			.add([
         TweenMax.to('.cloud-layer-1', 1, {
@@ -131,13 +144,13 @@
       .addTo(controller)
 
       
-      // Pipe
+      // Wheb Pipe image loaded
       let image = new Image()
       image.src = '/assets/ground.svg'
       image.onload = function () {
         let h = $('#pipe').height()
         
-        // Scene Money
+        // Layer 1 Money Scene 
         let tweenMoney = new TimelineMax ()
         .add([
           TweenMax.to('#money-blur', 1, {
@@ -173,13 +186,37 @@
         // .addIndicators()
         .addTo(controller)
 
-        //scene flow
+        //Money Flow in pipe scene
         let moneyPin = new ScrollMagic.Scene({
           triggerElement: '#pipe',
           duration: h - 60
         })
         .triggerHook(0)
         .setPin('#bank-flow')
+        // .addIndicators()
+        .addTo(controller)
+
+        // Rise
+        let tweenRiseCash = new TimelineMax ()
+        .add([
+          TweenMax.fromTo('#fall-cash', 0.5, {
+            top: 0,
+            scale: 0.9,
+            yoyo: true,
+            ease: Linear.easeNone
+          },{
+            top: -790,
+            scale: 0.9,
+            yoyo: true,
+            ease: Linear.easeNone
+          })
+        ])
+        let riseCashTween = new ScrollMagic.Scene({
+          triggerElement: '#scene4'
+        })
+        .triggerHook(.15)
+        .setTween(tweenRiseCash)
+        .offset(1000)
         // .addIndicators()
         .addTo(controller)
 
@@ -199,44 +236,30 @@
             ease: Linear.easeNone
           })
         ])
-        //scene fallCash
         let fallCashTween = new ScrollMagic.Scene({
           triggerElement: '#scene4'
         })
         .triggerHook(.15)
         .setTween(tweenFallCash)
-        .addIndicators()
+        // .addIndicators()
         .addTo(controller)
 
-        // Rise Cash
-        let tweenRiseCash = new TimelineMax ()
+        // Hand
+        let tweenHand = new TimelineMax ()
         .add([
-          TweenMax.fromTo('#fall-cash', 0.5, {
-            top: 0,
-            scale: 0.9,
-            yoyo: true,
-            ease: Linear.easeNone
-          },{
-            top: -790,
-            scale: 0.9,
-            yoyo: true,
-            ease: Linear.easeNone
+          TweenMax.to('#hand', 1, {
+            left: -1000,
+            ease: Power2.easeInOut
           })
         ])
-        //scene fallCash
-        let riseCashTween = new ScrollMagic.Scene({
-          triggerElement: '#scene4'
+        let handTween = new ScrollMagic.Scene({
+          triggerElement: '#hand'
         })
-        .triggerHook(.15)
-        .setTween(tweenRiseCash)
-        .offset(1000)
+        .triggerHook(.20)
+        .setTween(tweenHand)
         .addIndicators()
         .addTo(controller)
-
-      
       }
-
-
     })
   </script>
 </body>
