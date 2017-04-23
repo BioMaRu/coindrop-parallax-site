@@ -80,7 +80,9 @@
   </div>
 
   <div id="scene6">
-
+    <div class="tv-container">
+      <img id="tv" src="assets/tv.svg" >
+    </div>
   </div>
   <script>
     $(function() {
@@ -302,7 +304,7 @@
         .triggerHook(.60)
         .offset(500)
         .setTween(tweenHero2)
-        .addIndicators()
+        // .addIndicators()
         .addTo(controller)
 
         // Boy
@@ -341,6 +343,36 @@
         })
         .triggerHook(.1)
         .setTween(tweenBoy)
+        // .addIndicators()
+        .addTo(controller)
+
+        // Tv
+        let tweenTv = new TimelineMax ()
+        .add([
+          TweenMax.fromTo('#tv', 1, {
+            transform: 'scale(2.2)',
+            opacity: 1,
+            ease: Power2.easeInOut
+          },{
+            transform: 'scale(1)',
+            ease: Power2.easeInOut
+          }),
+          TweenMax.fromTo('.cage-container', 1, {
+            top: '50%',
+            scale: 0.8,
+            ease: Power2.easeInOut
+          },{
+            top: '60%',
+            scale: 0.9,
+            ease: Power2.easeInOut
+          })
+          
+        ])
+        let tvTween = new ScrollMagic.Scene({
+          triggerElement: '#scene6'
+        })
+        .triggerHook(.5)
+        .setTween(tweenTv)
         .addIndicators()
         .addTo(controller)
       }

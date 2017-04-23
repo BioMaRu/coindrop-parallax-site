@@ -184,7 +184,10 @@ html, body {
   }
   #cage-container {
     top: 50%;
-    transform: translateY(-50%) scale(.8);
+    bottom: 0;
+    margin-top: auto;
+    margin-bottom: auto;
+    transform: translate(0, -40%) scale(.8);
     width: 100%;
     position: fixed;
     text-align: center;
@@ -210,5 +213,23 @@ html, body {
 
 #scene6 {
   height: 1800px;
+  width: 100%;
   background-color: bisque;
+  .tv-container {
+    top: 0;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    z-index: 9999;
+    #tv {
+      top: 0;
+      margin-left: 5%;
+      margin-top: 5%;
+      opacity: 0;
+      width: 90%;
+      height: 90%;
+      // transform: scale(2.2);
+      object-fit: scale-down;
+    }
+  }
 }
