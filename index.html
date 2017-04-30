@@ -17,7 +17,7 @@
   <div id="app">
     
     <div v-show="!show" class="loading">
-      Loading...{{ Math.floor(percent) }}
+      Loading... {{ Math.floor(percent) }}
     </div>
 
     <div v-show="complete" class="stage" :class="{hide: !show}">
@@ -25,7 +25,7 @@
         <img src="/assets/logo.svg" height="80%">
         <div class="menu">
           <div><a href="" class="active">หน้าแรก</a></div>
-          <div><a href="" class="">ความช่วยเหลือ</a></div>
+          <div><a href="/menu1" class="">ความช่วยเหลือ</a></div>
           <div><a href="" class="">โครงการ</a></div>
           <div><a href="" class="">ติดต่อเรา</a></div>
         </div>
@@ -161,9 +161,10 @@
 
       <div id="scene8">
         <div id="next-button" class="button-container">
-          <div class="button-next">
+          <a href="/menu1" target="_blank"><div class="button-next">
             <div>ไปต่อ</div> <img src="assets/right.svg" alt="">
           </div>
+          </a>
         </div>
       </div>
     </div>
@@ -775,7 +776,7 @@
           this.complete = true
           setTimeout(() => {
             this.show = true
-          }, 1500)
+          }, 800)
         }
       }
     })
