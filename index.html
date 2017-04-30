@@ -21,6 +21,15 @@
     </div>
 
     <div v-show="complete" class="stage" :class="{hide: !show}">
+      <div class="nav-bar">
+        <img src="/assets/logo.svg" height="80%">
+        <div class="menu">
+          <div><a href="" class="active">หน้าแรก</a></div>
+          <div><a href="" class="">ความช่วยเหลือ</a></div>
+          <div><a href="" class="">โครงการ</a></div>
+          <div><a href="" class="">ติดต่อเรา</a></div>
+        </div>
+      </div>
       <div id="scene1">
         <div class="coin-container">
           <img id="coin" src="/assets/coin.svg" width="100">
@@ -140,7 +149,7 @@
                 ลดวิธีการขอทาน”
               </div>
             </div>
-            <img id="lamp" src="/assets/lamp.svg">
+            <img id="lamp" src="/assets/lamp.svg" width="310px">
           </div>
           <img id="black" src="/assets/black.svg">
           <div id="text5">
@@ -151,7 +160,11 @@
       </div>
 
       <div id="scene8">
-
+        <div id="next-button" class="button-container">
+          <div class="button-next">
+            <div>ไปต่อ</div> <img src="assets/right.svg" alt="">
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -591,6 +604,27 @@
             // .addIndicators()
             .addTo(controller)
 
+            // next-button
+            let tweenNext = new TimelineMax ()
+            .add([
+              TweenMax.fromTo('#next-button', 1, {
+                opacity: 0,
+                ease: Power1.easeInOut,
+              },{
+                opacity: 1,
+                ease: Power1.easeInOut
+              })
+            ])
+            let nextTween = new ScrollMagic.Scene({
+              triggerElement: '#scene8',
+              duration: 200
+            })
+            .triggerHook(.6)
+            .offset(1500)
+            .setTween(tweenNext)
+            // .addIndicators()
+            .addTo(controller)
+
             // Lamp
             let tweenLamp = new TimelineMax ()
             .add([
@@ -623,10 +657,11 @@
             // .addIndicators()
             .addTo(controller)
 
+
             // Text6
             let tweenText6 = new TimelineMax ()
             .add([
-              TweenMax.fromTo('#text6', .5, {
+              TweenMax.fromTo('#text6', 1, {
                 opacity: 0,
                 ease: Power1.easeInOut
               },{
@@ -635,11 +670,11 @@
               })
             ])
             let text6Tween = new ScrollMagic.Scene({
-              triggerElement: '#scene7',
+              triggerElement: '#scene8',
               duration: 300
             })
-            .triggerHook(.5)
-            .offset(500)
+            .triggerHook(.4)
+            .offset(300)
             .setTween(tweenText6)
             // .addIndicators()
             .addTo(controller)
@@ -660,15 +695,16 @@
                 immediateRender: false
               },{
                 opacity: 0,
-                ease: Power1.easeInOut
+                ease: Power1.easeInOut,
+                immediateRender: false
               })
             ])
             let text7Tween = new ScrollMagic.Scene({
-              triggerElement: '#scene7',
+              triggerElement: '#scene8',
               duration: 300
             })
             .triggerHook(.5)
-            .offset(1000)
+            .offset(700)
             .setTween(tweenText7)
             // .addIndicators()
             .addTo(controller)
@@ -690,17 +726,18 @@
                 immediateRender: false
               },{
                 opacity: 0,
-                ease: Power1.easeInOut
+                ease: Power1.easeInOut,
+                immediateRender: false
               })
             ])
             let text8Tween = new ScrollMagic.Scene({
-              triggerElement: '#scene7',
+              triggerElement: '#scene8',
               duration: 400
             })
             .triggerHook(.5)
-            .offset(1500)
+            .offset(1100)
             .setTween(tweenText8)
-            .addIndicators()
+            // .addIndicators()
             .addTo(controller)
 
             // Black out

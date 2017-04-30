@@ -11,6 +11,10 @@ html, body {
   font-family: PSL2;
   src: url("/assets/font/PSL240pro.otf"); }
 
+@font-face {
+  font-family: PSL3;
+  src: url("/assets/font/PSL242pro.otf"); }
+
 .center {
   margin: auto;
   left: 0;
@@ -25,7 +29,36 @@ html, body {
 .hide {
   opacity: 0; }
 
+.nav-bar {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  z-index: 15;
+  top: 0;
+  width: 100%;
+  height: 80px;
+  justify-content: space-between; }
+  .nav-bar > img {
+    margin-left: 24px; }
+  .nav-bar .menu {
+    display: flex;
+    margin-right: 24px; }
+    .nav-bar .menu > div {
+      letter-spacing: 1px;
+      font-family: PSL3;
+      font-size: 24px;
+      color: white;
+      padding: 0 16px; }
+      .nav-bar .menu > div a {
+        text-decoration: none;
+        color: white; }
+      .nav-bar .menu > div a.active {
+        font-family: PSL1;
+        color: black;
+        text-decoration: none; }
+
 #scene1 {
+  pointer-events: none;
   outline: 1px dashed orange;
   background-color: #03a9f4; }
   #scene1 .coin-container {
@@ -173,6 +206,7 @@ html, body {
     text-align: center; }
 
 #scene5 {
+  pointer-events: none;
   position: relative;
   top: -1px;
   height: 1800px;
@@ -214,6 +248,7 @@ html, body {
       z-index: 999; }
 
 #scene6 {
+  pointer-events: none;
   height: 700px;
   width: 100%;
   position: relative;
@@ -235,8 +270,9 @@ html, body {
       object-fit: scale-down; }
 
 #scene7 {
+  pointer-events: none;
   position: relative;
-  height: 1900px;
+  height: 700px;
   width: 100%;
   background-color: white; }
   #scene7 .black-container {
@@ -261,15 +297,15 @@ html, body {
         margin: auto;
         left: 0;
         right: 0;
-        top: 160px;
-        transform: scale(0.8); }
+        bottom: 0px;
+        transform: scale(1); }
       #scene7 .black-container .lamp-container #text6 {
         font-size: 3.5em;
         font-family: PSL2;
         position: absolute;
         display: flex;
         width: 100%;
-        color: white;
+        color: black;
         justify-content: space-around;
         margin: auto;
         top: 0;
@@ -294,7 +330,7 @@ html, body {
         position: absolute;
         display: flex;
         width: 100%;
-        color: white;
+        color: black;
         justify-content: space-around;
         margin: auto;
         top: 0;
@@ -319,7 +355,7 @@ html, body {
         position: absolute;
         display: flex;
         width: 100%;
-        color: white;
+        color: black;
         justify-content: space-around;
         margin: auto;
         top: 0;
@@ -350,6 +386,28 @@ html, body {
 
 #scene8 {
   position: relative;
-  height: 800px;
+  height: 2000px;
   width: 100%;
   background-color: white; }
+  #scene8 .button-container {
+    position: absolute;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    top: 1400; }
+    #scene8 .button-container .button-next {
+      line-height: 50px;
+      display: flex;
+      align-items: center;
+      background-color: #03A9F4;
+      border-radius: 50px;
+      padding: 0 24px;
+      cursor: pointer; }
+      #scene8 .button-container .button-next:hover {
+        background-color: #62CFFF; }
+      #scene8 .button-container .button-next > div {
+        font-size: 24px;
+        color: white;
+        margin-right: 12px; }
+      #scene8 .button-container .button-next img {
+        height: 20px; }
