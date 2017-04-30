@@ -1,591 +1,746 @@
 <html>
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Baby Thesis</title>
   <link rel="stylesheet" href="/style.css">
+  <script src="https://code.createjs.com/preloadjs-0.6.2.min.js"></script>
   <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.14.2/TweenMax.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.3/ScrollMagic.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.3/plugins/animation.gsap.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.3/plugins/debug.addIndicators.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.0/vue.min.js"></script>
 </head>
-<body>
-  <div id="scene1">
-    <div class="coin-container">
-      <img id="coin" src="/assets/coin.svg" width="100">
+<body style="overflow-x: hidden">
+  <div id="app">
+    
+    <div v-show="!show" class="loading">
+      Loading...{{ Math.floor(percent) }}
     </div>
-    <div class="first-stage">
-      <div style="font-size: 2.5em; color: blueviolet; text-shadow: 2px 2px #c273d0;">Waiting for A TEXT from my client<br>Please just scroll down...</div>
-    </div>
-    <div class="cloud-container">
-      <img id="cloud1" class="cloud-layer-1 center" src="/assets/cloud1.svg">
-      <img id="cloud2" class="cloud-layer-1 center" src="/assets/cloud2.svg" width="250px">
-      <img id="cloud3" class="cloud-layer-2 left" src="/assets/cloud-left1.svg" width="100px">
-      <img id="cloud4" class="cloud-layer-2 right" src="/assets/cloud-right1.svg" width="100px">
-      <img id="cloud5" class="cloud-layer-2 left" src="/assets/cloud-left2.svg" width="100px">
-      <img id="cloud6" class="cloud-layer-1 center" src="/assets/cloud2.svg">
-      <img id="cloud7" class="cloud-layer-2 left" src="/assets/cloud-left1.svg" width="100px">
-      <img id="cloud8" class="cloud-layer-2 right" src="/assets/cloud-right1.svg" width="100px">
-      <div id="text1" class="center">
-        This is awesome text, OK?<br>
-        Yes, It very AWSM
-      </div>
-    </div>
-  </div>
 
-  <div id="scene2">
-    <div class="city-container">
-      <img id="cup" class="center" src="/assets/cup.svg" width="250px">
-      <img id="building" class="center" src="/assets/city1.png" width="100%">
-      <img id="city-scape" class="center" src="/assets/city2.svg" width="100%">
-    </div>
-  </div>
-
-  <div id="scene3">
-    <img id="pipe" src="/assets/ground.svg" width="100%">
-    <img id="bank-flow" src="/assets/money.svg" width="100%">
-    <img id="money-blur" src="/assets/money-blur.png" width="100%">
-    <img id="coin-blur" src="/assets/coin-blur.png" width="100%">
-    <div id="text2">
-      This is awesome text too, Right?<br>
-      Yes, It very AWSM
-    </div>
-    <div id="text3">
-      This is also awesome text too, Right?<br>
-      Yes, It very AWSM
-    </div>
-  </div>
-
-  <div id="scene4">
-    <img id="fall-cash" class="center" src="/assets/cash.svg">
-    <div id="text4" class="center">
-      This is also awesome text too, Right?<br>
-      Yes, It very AWSM
-    </div>
-  </div>
-
-  <div id="scene5">
-    <div class="hand-container" style="text-align: center">
-      <img id="hand" src="/assets/hand.svg">
-    </div>
-    <div class="hero-container" style="text-align: center">
-      <img id="hero" src="/assets/hero.svg">
-    </div>
-    <div id="cage-container" class="cage-container">
-      <img id="cage-top" src="/assets/cage-top.svg">
-      <img id="boy" src="/assets/boy.svg">
-      <img id="cage-stand" src="/assets/cage-stand.svg">
-    </div>
-  </div>
-
-  <div id="scene6">
-    <div class="tv-container">
-      <img id="tv" src="assets/tv.svg" >
-    </div>
-  </div>
-
-  <div id="scene7">
-    <div class="black-container">
-      <div class="lamp-container">
-        <div id="text6">
-          <div class="t-left">
-            6666 Well o Left Yo Yo
+    <div v-show="complete" class="stage" :class="{hide: !show}">
+      <div id="scene1">
+        <div class="coin-container">
+          <img id="coin" src="/assets/coin.svg" width="100">
+        </div>
+        <div class="first-stage">
+          <div style="font-size: 6em; color: black; text-align: center; line-height: 100%">
+            เปลี่ยนความสงสาร<br>
+            เป็นการสนับสนุน
           </div>
-          <div class="t-right">
-           6666 Hello Right
+          <p>ดูอิทไรท์ดอทคอม พื้นที่สร้างสังคมที่น่าอยู่สำหรับทุกคน</p>
+          <div>
+            <img src="/assets/mouse.png" alt="">
           </div>
         </div>
-        <div id="text7">
-          <div class="t-left">
-            Well o LeftYo Yo
-          </div>
-          <div class="t-right">
-            Hello Right
+        <div class="cloud-container">
+          <img id="cloud1" class="cloud-layer-1 center" src="/assets/cloud1.svg">
+          <img id="cloud2" class="cloud-layer-1 center" src="/assets/cloud2.svg" width="250px">
+          <img id="cloud3" class="cloud-layer-2 left" src="/assets/cloud-left1.svg" width="100px">
+          <img id="cloud4" class="cloud-layer-2 right" src="/assets/cloud-right1.svg" width="100px">
+          <img id="cloud5" class="cloud-layer-2 left" src="/assets/cloud-left2.svg" width="100px">
+          <img id="cloud6" class="cloud-layer-1 center" src="/assets/cloud2.svg">
+          <img id="cloud7" class="cloud-layer-2 left" src="/assets/cloud-left1.svg" width="100px">
+          <img id="cloud8" class="cloud-layer-2 right" src="/assets/cloud-right1.svg" width="100px">
+          <div id="text1" class="center">
+            <!--เปลรายนความสงสาร<br>
+            Yes, It very AWSM-->
           </div>
         </div>
-        <img id="lamp" src="/assets/lamp.svg">
       </div>
-      <img id="black" src="/assets/black.svg">
-      <div id="text5">
-        XXXXXXXXXXXXXXXXX <br>
-        XXXXXXXXXXXXXXXX
+
+      <div id="scene2">
+        <div class="city-container">
+          <img id="cup" class="center" src="/assets/cup.svg" width="250px">
+          <img id="building" class="center" src="/assets/city1.png" width="100%">
+          <img id="city-scape" class="center" src="/assets/city2.svg" width="100%">
+        </div>
+      </div>
+
+      <div id="scene3">
+        <img id="pipe" src="/assets/ground.svg" width="100%">
+        <img id="bank-flow" src="/assets/money.svg" width="100%">
+        <img id="money-blur" src="/assets/money-blur.png" width="100%">
+        <img id="coin-blur" src="/assets/coin-blur.png" width="100%">
+        <div id="text2-1">
+          การค้ามนุษย์เพื่อการขอทาน <br>
+          ธุรกิจที่ใช้ความน่าสงสารมาเป็นจุดขาย
+        </div>
+        <div id="text2" class="right">
+          รายได้เฉลี่ยต่อวัน <br>
+          ของเด็กขอทาน <br>
+          อยู่ที่ประมาณ <br> 
+          300 - 1,500 บาท
+        </div>
+        <div id="text3">
+          <span style="font-size: 1.5em;">เด็ก 1 คน</span> <br>
+          ถูกซื้อให้มาด้วยเงินเพียง <br>
+          1,500 - 3,000 บาทเท่านั้น
+        </div>
+      </div>
+
+      <div id="scene4">
+        <img id="fall-cash" class="center" src="/assets/cash.svg">
+        <div id="text4" class="center">
+          ที่เด็กได้จากการขอทาน <br>
+          แปรเปลี่ยนไปได้หลายอย่าง…
+        </div>
+        <div id="text4-2" class="center">
+          แม้กระทั่งการซื้อเด็กคนใหม่ <br>
+          เข้าสู่วงจรขอทาน
+        </div>
+      </div>
+
+      <div id="scene5">
+        <div class="hand-container" style="text-align: center">
+          <img id="hand" src="/assets/hand.svg">
+        </div>
+        <div class="hero-container" style="text-align: center">
+          <img id="hero" src="/assets/hero.svg">
+        </div>
+        <div id="cage-container" class="cage-container">
+          <img id="cage-top" src="/assets/cage-top.svg">
+          <img id="boy" src="/assets/boy.svg">
+          <img id="cage-stand" src="/assets/cage-stand.svg">
+        </div>
+      </div>
+
+      <div id="scene6">
+        <div class="tv-container">
+          <img id="tv" src="assets/tv.svg" >
+        </div>
+      </div>
+
+      <div id="scene7">
+        <div class="black-container">
+          <div class="lamp-container">
+            <div id="text6">
+              <div class="t-left">
+                “Let’s light
+              </div>
+              <div class="t-right">
+                their future”
+              </div>
+            </div>
+            <div id="text7">
+              <div class="t-left">
+                “เพราะอนาคต
+              </div>
+              <div class="t-right">
+                เพราะเรื่องสำคัญ”
+              </div>
+            </div>
+            <div id="text8">
+              <div class="t-left">
+                “ให้ทานถูกวิธี
+              </div>
+              <div class="t-right">
+                ลดวิธีการขอทาน”
+              </div>
+            </div>
+            <img id="lamp" src="/assets/lamp.svg">
+          </div>
+          <img id="black" src="/assets/black.svg">
+          <div id="text5">
+            “เงินไม่ใช่สิ่งที่เด็กต้องการ แต่คือ <br>
+            การช่วยเหลือให้ได้ออกจากข้างถนนต่างหาก”
+          </div>
+        </div>
+      </div>
+
+      <div id="scene8">
+
       </div>
     </div>
   </div>
-
-  <div id="scene8">
-
-  </div>
-
   <script>
-    $(function() {
-      
-      // Animation Controller
-      var controller = new ScrollMagic.Controller({
-        loglevel: 2
-      })
+    new Vue({ 
+      el: '#app', 
+      name: 'app',
+      data () {
+        return {
+          show: false,
+          complete: false,
+          percent: 0
+        }
+      },
+      mounted () {
+        this.loadImage()
+        console.log('VUE')
+      },
+      methods: {
+        loadImage () {
+          var queue = new createjs.LoadQueue()
+          queue.addEventListener("progress", this.handleProgress)
+          queue.addEventListener("complete", this.handleFileComplete)
+          queue.loadFile("/style.css")
+          queue.loadFile("/assets/lamp.svg")
+          queue.loadFile("/assets/black.svg")
+          queue.loadFile("/assets/tv.svg")
+          queue.loadFile("/assets/cage-stand.svg")
+          queue.loadFile("/assets/boy.svg")
+          queue.loadFile("/assets/cage-top.svg")
+          queue.loadFile("/assets/hero.svg")
+          queue.loadFile("/assets/hand.svg")
+          queue.loadFile("/assets/cash.svg")
+          queue.loadFile("/assets/ground.svg")
+          queue.loadFile("/assets/money.svg")
+          queue.loadFile("/assets/money-blur.png")
+          queue.loadFile("/assets/coin-blur.png")
+          queue.loadFile("/assets/cup.svg")
+          queue.loadFile("/assets/city1.png")
+          queue.loadFile("/assets/city2.svg")
 
-      // Srt Screen to top when refresh
-      window.setTimeout(function () {
-        // $('body').scrollTop(0)
-      }, 100)
-
-      // Coin Animation (Inf.)
-      var coinTween = new TweenMax.fromTo('#coin', 1, {
-        rotation: "-50deg",
-        ease: Power1.easeInOut,
-        yoyo: true,
-        repeatDelay:0.2,
-        repeat: -1
-      }, {
-        rotation: "0deg",
-        ease: Power1.easeInOut,
-        yoyo: true,
-        repeatDelay: 0.2,
-        repeat: -1
-      })
-
-      // Float Cash Animation (Inf.)
-      var fallTween = new TweenMax.fromTo('#fall-cash', 1.5, {
-        transform: "translateY(0px)",
-        ease: Power1.easeInOut,
-        yoyo: true,
-        repeatDelay:0.2,
-        repeat: -1
-      }, {
-        transform: "translateY(60px)",
-        ease: Power1.easeInOut,
-        yoyo: true,
-        repeatDelay: 0.2,
-        repeat: -1
-      })
-
-
-      // Cloud scene
-      let tweenCloud = new TimelineMax ()
-			.add([
-        TweenMax.to('.cloud-layer-1', 1, {
-          top: -100,
-          ease: Linear.easeNone
-        }),
-        TweenMax.to('.cloud-layer-2', 1, {
-          top: -700,
-          ease: Linear.easeNone
-        }),
-        TweenMax.to('#text1', 1, {
-          top: 200,
-          ease: Linear.easeNone
-        })
-      ])
-      let cloudScene = new ScrollMagic.Scene({
-        triggerElement: '.cloud-container',
-        duration: 1500
-      })
-      .triggerHook(1)
-      .setTween(tweenCloud)
-      // .addIndicators()
-      .addTo(controller)
-
-      
-      // Wheb Pipe image loaded
-      let image = new Image()
-      image.src = '/assets/ground.svg'
-      image.onload = function () {
-        let h = $('#pipe').height()
-        
-        // Layer 1 Money Scene 
-        let tweenMoney = new TimelineMax ()
-        .add([
-          TweenMax.to('#money-blur', 1, {
-            top: -900,
-            ease: Linear.easeNone
-          }),
-          TweenMax.to('#coin-blur', 1, {
-            top: -1900,
-            ease: Linear.easeNone
-          }),
-          TweenMax.fromTo('#text2', 1, {
-            top: (h * 30) / 100,
-            ease: Linear.easeNone
-          },{
-            top: (h * 50) / 100,
-            ease: Linear.easeNone
-          }),
-          TweenMax.fromTo('#text3', 1, {
-            top: (h * 60) / 100,
-            ease: Linear.easeNone
-          },{
-            top: (h * 80) / 100,
-            ease: Linear.easeNone
+          queue.loadFile("/assets/cloud2.svg")
+          queue.loadFile("/assets/cloud1.svg")
+          queue.loadFile("/assets/cloud-left1.svg")
+          queue.loadFile("/assets/cloud-right1.svg")
+          queue.loadFile("/assets//cloud-left2.svg")
+        },
+        handleProgress (e) {
+          this.percent = e.progress * 100
+          console.log('Loading ', e.progress * 100, '%')
+        },
+        handleFileComplete () {
+          console.log('LOAD COMPLETTE')
+          this.initial()
+        },
+        initial () {
+          // Animation Controller
+          var controller = new ScrollMagic.Controller({
+            loglevel: 2
           })
-        ])
 
-        let moneyScene = new ScrollMagic.Scene({
-          triggerElement: '#scene3',
-          duration: 4500
-        })
-        .triggerHook(1)
-        .setTween(tweenMoney)
-        // .addIndicators()
-        .addTo(controller)
+          // Srt Screen to top when refresh
+          window.setTimeout(function () {
+            // $('body').scrollTop(0)
+          }, 100)
 
-        //Money Flow in pipe scene
-        let moneyPin = new ScrollMagic.Scene({
-          triggerElement: '#pipe',
-          duration: h - 60
-        })
-        .triggerHook(0)
-        .setPin('#bank-flow')
-        // .addIndicators()
-        .addTo(controller)
-
-        // Rise
-        let tweenRiseCash = new TimelineMax ()
-        .add([
-          TweenMax.fromTo('#fall-cash', 0.5, {
-            top: 0,
-            scale: 0.9,
+          // Coin Animation (Inf.)
+          var coinTween = new TweenMax.fromTo('#coin', 1, {
+            rotation: "-50deg",
+            ease: Power1.easeInOut,
             yoyo: true,
-            ease: Linear.easeNone
-          },{
-            top: -790,
-            scale: 0.9,
-            yoyo: true,
-            ease: Linear.easeNone
-          })
-        ])
-        let riseCashTween = new ScrollMagic.Scene({
-          triggerElement: '#scene4'
-        })
-        .triggerHook(.15)
-        .setTween(tweenRiseCash)
-        .offset(1000)
-        // .addIndicators()
-        .addTo(controller)
-
-
-        // Fall Cash
-        let tweenFallCash = new TimelineMax ()
-        .add([
-          TweenMax.fromTo('#fall-cash', 0.5, {
-            top: -790,
-            scale: 0.9,
-            yoyo: true,
-            ease: Linear.easeNone
-          },{
-            top: 0,
-            scale: 0.9,
-            yoyo: true,
-            ease: Linear.easeNone
-          })
-        ])
-        let fallCashTween = new ScrollMagic.Scene({
-          triggerElement: '#scene4'
-        })
-        .triggerHook(.15)
-        .setTween(tweenFallCash)
-        // .addIndicators()
-        .addTo(controller)
-
-        // Hand
-        let tweenHand = new TimelineMax ()
-        .add([
-          TweenMax.to('#hand', 1, {
-            left: -1000,
-            ease: Power2.easeInOut
-          }),
-          TweenMax.to('#coin',0.1, {
-            opacity: 0
-          })
-        ])
-        let handTween = new ScrollMagic.Scene({
-          triggerElement: '#hand'
-        })
-        .triggerHook(.20)
-        .setTween(tweenHand)
-        // .addIndicators()
-        .addTo(controller)
-        
-
-        // Hero
-        let tweenHero = new TimelineMax ()
-        .add([
-          TweenMax.fromTo('#hero', 1, {
-            right: -1000,
-            ease: Power2.easeInOut
+            repeatDelay:0.2,
+            repeat: -1
           }, {
-            left: 0,
-            right: 0,
-            ease: Power2.easeInOut
+            rotation: "0deg",
+            ease: Power1.easeInOut,
+            yoyo: true,
+            repeatDelay: 0.2,
+            repeat: -1
           })
-        ])
-        let heroTween = new ScrollMagic.Scene({
-          triggerElement: '#hero',
-          duration: 300
-        })
-        .triggerHook(.60)
-        .setTween(tweenHero)
-        // .addIndicators()
-        .addTo(controller)
-        
-        let tweenHero2 = new TimelineMax ()
-        .add([
-          TweenMax.to('#hero', 1, {
-            left: -1000,
-            ease: Power2.easeInOut
-          })
-        ])
-        let heroTween2 = new ScrollMagic.Scene({
-          triggerElement: '#hero',
-          duration: 500
-        })
-        .triggerHook(.60)
-        .offset(500)
-        .setTween(tweenHero2)
-        // .addIndicators()
-        .addTo(controller)
 
-        // Boy
-        let tweenBoy = new TimelineMax ()
-        .add([
-          TweenMax.fromTo('#boy', 1, {
-            right: '-1000px',
-            ease: Power2.easeInOut
-          },{
-            right: 0,
-            ease: Power2.easeInOut
-          }),
-          TweenMax.fromTo('#cage-top', 1.5, {
-            top: -1050,
-            right: '-1000px',
-            ease: Power2.easeInOut
-          },{
-            top: -250,
-            right: 0,
-            left: 0,
-            ease: Power2.easeInOut
-          }),
-          TweenMax.fromTo('#cage-stand', 1.5, {
-            top: 850,
-            right: '-1000px',
-            ease: Power2.easeInOut
-          },{
-            top: 350,
-            right: 0,
-            left: 0,
-            ease: Power2.easeInOut
+          // Float Cash Animation (Inf.)
+          var fallTween = new TweenMax.fromTo('#fall-cash', 1.5, {
+            transform: "translateY(0px)",
+            ease: Power1.easeInOut,
+            yoyo: true,
+            repeatDelay:0.2,
+            repeat: -1
+          }, {
+            transform: "translateY(60px)",
+            ease: Power1.easeInOut,
+            yoyo: true,
+            repeatDelay: 0.2,
+            repeat: -1
           })
-        ])
-        let boyTween = new ScrollMagic.Scene({
-          triggerElement: '#hero'
-        })
-        .triggerHook(.1)
-        .setTween(tweenBoy)
-        // .addIndicators()
-        .addTo(controller)
 
-        // Tv
-        let tweenTv = new TimelineMax ()
-        .add([
-          TweenMax.fromTo('#tv', 1, {
-            transform: 'scale(2.2)',
-            opacity: 1,
-            ease: Power2.easeInOut
-          },{
-            transform: 'scale(1)',
-            ease: Power2.easeInOut
-          }),
-          TweenMax.fromTo('.cage-container', 1, {
-            top: '50%',
-            scale: 0.8,
-            ease: Power2.easeInOut
-          },{
-            top: '60%',
-            scale: 0.9,
-            ease: Power2.easeInOut
+
+          // Cloud scene
+          let tweenCloud = new TimelineMax ()
+          .add([
+            TweenMax.to('.cloud-layer-1', 1, {
+              top: -100,
+              ease: Linear.easeNone
+            }),
+            TweenMax.to('.cloud-layer-2', 1, {
+              top: -700,
+              ease: Linear.easeNone
+            }),
+            TweenMax.to('#text1', 1, {
+              top: 200,
+              ease: Linear.easeNone
+            })
+          ])
+          let cloudScene = new ScrollMagic.Scene({
+            triggerElement: '.cloud-container',
+            duration: 1500
           })
+          .triggerHook(1)
+          .setTween(tweenCloud)
+          // .addIndicators()
+          .addTo(controller)
+
           
-        ])
-        let tvTween = new ScrollMagic.Scene({
-          triggerElement: '#scene6',
-          duration: 300
-        })
-        .triggerHook(1)
-        .setTween(tweenTv)
-        // .addIndicators()
-        .addTo(controller)
+          // Wheb Pipe image loaded
+          let image = new Image()
+          image.src = '/assets/ground.svg'
+          image.onload = function () {
+            let h = $('#pipe').height()
+            
+            // Layer 1 Money Scene 
+            let tweenMoney = new TimelineMax ()
+            .add([
+              TweenMax.to('#money-blur', 1, {
+                top: -900,
+                ease: Linear.easeNone
+              }),
+              TweenMax.to('#coin-blur', 1, {
+                top: -1900,
+                ease: Linear.easeNone
+              }),
+              TweenMax.fromTo('#text2-1', 2, {
+                top: (h * 10) / 100,
+                ease: Linear.easeNone
+              },{
+                top: (h * 20) / 100,
+                ease: Linear.easeNone
+              }),
+              TweenMax.fromTo('#text2', 1, {
+                top: (h * 25) / 100,
+                ease: Linear.easeNone
+              },{
+                top: (h * 35) / 100,
+                ease: Linear.easeNone
+              }),
+              TweenMax.fromTo('#text3', 1, {
+                top: (h * 45) / 100,
+                ease: Linear.easeNone
+              },{
+                top: (h * 60) / 100,
+                ease: Linear.easeNone
+              })
+            ])
 
-        // Black
-        let tweenBlack = new TimelineMax ()
-        .add([
-          TweenMax.fromTo('#black', 1, {
-            transform: 'scale(25)',
-            ease: Power2.easeInOut
-          },{
-            transform: 'scale(3.0)',
-            ease: Power2.easeInOut
-          }),
-          TweenMax.to('#scene2', 1, {
-            opacity: 0
-          }),
-          TweenMax.to('#scene3', 1, {
-            opacity: 0
-          }),
-          TweenMax.to('#scene4', 1, {
-            opacity: 0
-          })
-        ])
-        let blackTween = new ScrollMagic.Scene({
-          triggerElement: '#scene7',
-          duration: 500
-        })
-        .triggerHook(9)
-        .setTween(tweenBlack)
-        // .addIndicators()
-        .addTo(controller)
+            let moneyScene = new ScrollMagic.Scene({
+              triggerElement: '#scene3',
+              duration: 6500
+            })
+            .triggerHook(1)
+            .setTween(tweenMoney)
+            // .addIndicators()
+            .addTo(controller)
 
-        // Text5
-        let tweenText5 = new TimelineMax ()
-        .add([
-          TweenMax.fromTo('#text5', 1, {
-            opacity: 0,
-            ease: Power1.easeInOut,
-            immediateRender: false,
-            yoyo: true
-          },{
-            opacity: 1,
-            ease: Power1.easeInOut,
-            immediateRender: false,
-            yoyo: true
-          })
-        ])
-        let text5Tween = new ScrollMagic.Scene({
-          triggerElement: '#scene7',
-          duration: 300
-        })
-        .triggerHook(9)
-        .offset(300)
-        .setTween(tweenText5)
-        // .addIndicators()
-        .addTo(controller)
+            //Money Flow in pipe scene
+            let moneyPin = new ScrollMagic.Scene({
+              triggerElement: '#pipe',
+              duration: h - 60
+            })
+            .triggerHook(0)
+            .setPin('#bank-flow')
+            // .addIndicators()
+            .addTo(controller)
 
-        // Lamp
-        let tweenLamp = new TimelineMax ()
-        .add([
-          TweenMax.fromTo('#lamp', 1, {
-            opacity: 0,
-            ease: Power1.easeInOut
-          },{
-            opacity: 1,
-            ease: Power1.easeInOut
-          }),
-          TweenMax.fromTo('#text5', 1, {
-            opacity: 1,
-            ease: Power1.easeInOut,
-            immediateRender: false,
-            yoyo: true
-          },{
-            opacity: 0,
-            ease: Power1.easeInOut,
-            immediateRender: false,
-            yoyo: true
-          })
-        ])
-        let lampTween = new ScrollMagic.Scene({
-          triggerElement: '#scene7',
-          duration: 300
-        })
-        .triggerHook(.9)
-        .offset(600)
-        .setTween(tweenLamp)
-        // .addIndicators()
-        .addTo(controller)
+            // Rise
+            let tweenRiseCash = new TimelineMax ()
+            .add([
+              TweenMax.fromTo('#fall-cash', 0.5, {
+                top: 0,
+                scale: 0.9,
+                yoyo: true,
+                ease: Linear.easeNone
+              },{
+                top: -790,
+                scale: 0.9,
+                yoyo: true,
+                ease: Linear.easeNone
+              })
+            ])
+            let riseCashTween = new ScrollMagic.Scene({
+              triggerElement: '#scene4',
+              duration: 300
+            })
+            .triggerHook(.15)
+            .setTween(tweenRiseCash)
+            .offset(1000)
+            // .addIndicators()
+            .addTo(controller)
 
-        // Text6
-        let tweenText6 = new TimelineMax ()
-        .add([
-          TweenMax.fromTo('#text6', .5, {
-            opacity: 0,
-            ease: Power1.easeInOut
-          },{
-            opacity: 1,
-            ease: Power1.easeInOut
-          })
-        ])
-        let text6Tween = new ScrollMagic.Scene({
-          triggerElement: '#scene7',
-          duration: 300
-        })
-        .triggerHook(.5)
-        .offset(1000)
-        .setTween(tweenText6)
-        .addIndicators()
-        .addTo(controller)
+            // Text4
+            let tweenText4 = new TimelineMax ()
+            .add([
+              TweenMax.fromTo('#text4-2', 1, {
+                opacity: 0,
+                ease: Linear.easeNone
+              },{
+                opacity: 1,
+                ease: Linear.easeNone
+              })
+            ])
+            let text4Tween = new ScrollMagic.Scene({
+              triggerElement: '#text4',
+              duration: 300
+            })
+            .triggerHook(.45)
+            .setTween(tweenText4)
+            .offset(0)
+            // .addIndicators()
+            .addTo(controller)
 
-        // Text7
-        let tweenText7 = new TimelineMax ()
-        .add([
-          TweenMax.fromTo('#text7', 1, {
-            opacity: 0,
-            ease: Power1.easeInOut
-          },{
-            opacity: 1,
-            ease: Power1.easeInOut
-          }),
-          TweenMax.fromTo('#text6', 1, {
-            opacity: 1,
-            ease: Power1.easeInOut,
-            immediateRender: false
-          },{
-            opacity: 0,
-            ease: Power1.easeInOut
-          })
-        ])
-        let text7Tween = new ScrollMagic.Scene({
-          triggerElement: '#scene7',
-          duration: 300
-        })
-        .triggerHook(.5)
-        .offset(1350)
-        .setTween(tweenText7)
-        .addIndicators()
-        .addTo(controller)
+            // Fall Cash
+            let tweenFallCash = new TimelineMax ()
+            .add([
+              TweenMax.fromTo('#fall-cash', 0.5, {
+                top: -790,
+                scale: 0.9,
+                yoyo: true,
+                ease: Linear.easeNone
+              },{
+                top: 0,
+                scale: 0.9,
+                yoyo: true,
+                ease: Linear.easeNone
+              })
+            ])
+            let fallCashTween = new ScrollMagic.Scene({
+              triggerElement: '#scene4',
+              duration: 300
+            })
+            .triggerHook(.15)
+            .setTween(tweenFallCash)
+            // .addIndicators()
+            .addTo(controller)
+
+            // Hand
+            let tweenHand = new TimelineMax ()
+            .add([
+              TweenMax.to('#hand', 1, {
+                left: -1000,
+                ease: Power2.easeInOut
+              }),
+              TweenMax.to('#coin',0.1, {
+                opacity: 0
+              })
+            ])
+            let handTween = new ScrollMagic.Scene({
+              triggerElement: '#hand',
+              duration: 400
+            })
+            .triggerHook(.20)
+            .setTween(tweenHand)
+            // .addIndicators()
+            .addTo(controller)
+            
+
+            // Hero
+            let tweenHero = new TimelineMax ()
+            .add([
+              TweenMax.fromTo('#hero', 1, {
+                right: -1000,
+                ease: Power2.easeInOut
+              }, {
+                left: 0,
+                right: 0,
+                ease: Power2.easeInOut
+              })
+            ])
+            let heroTween = new ScrollMagic.Scene({
+              triggerElement: '#hero',
+              duration: 300
+            })
+            .triggerHook(.60)
+            .setTween(tweenHero)
+            // .addIndicators()
+            .addTo(controller)
+            
+            let tweenHero2 = new TimelineMax ()
+            .add([
+              TweenMax.to('#hero', 1, {
+                left: -1000,
+                ease: Power2.easeInOut
+              })
+            ])
+            let heroTween2 = new ScrollMagic.Scene({
+              triggerElement: '#hero',
+              duration: 500
+            })
+            .triggerHook(.60)
+            .offset(500)
+            .setTween(tweenHero2)
+            // .addIndicators()
+            .addTo(controller)
+
+            // Boy
+            let tweenBoy = new TimelineMax ()
+            .add([
+              TweenMax.fromTo('#boy', 1, {
+                right: '-1000px',
+                opacity: 0,
+                ease: Power2.easeInOut
+              },{
+                right: 0,
+                opacity: 1,
+                ease: Power2.easeInOut
+              }),
+              TweenMax.fromTo('#cage-top', 1.5, {
+                top: -1050,
+                right: '-1000px',
+                ease: Power2.easeInOut
+              },{
+                top: -250,
+                right: 0,
+                left: 0,
+                ease: Power2.easeInOut
+              }),
+              TweenMax.fromTo('#cage-stand', 1.5, {
+                top: 850,
+                right: '-1000px',
+                ease: Power2.easeInOut
+              },{
+                top: 350,
+                right: 0,
+                left: 0,
+                ease: Power2.easeInOut
+              })
+            ])
+            let boyTween = new ScrollMagic.Scene({
+              triggerElement: '#hero',
+              duration: 450
+            })
+            .triggerHook(.1)
+            .setTween(tweenBoy)
+            // .addIndicators()
+            .addTo(controller)
+
+            // Tv
+            let tweenTv = new TimelineMax ()
+            .add([
+              TweenMax.fromTo('#tv', 1, {
+                transform: 'scale(2.2)',
+                opacity: 0,
+                ease: Power2.easeInOut
+              },{
+                transform: 'scale(1)',
+                opacity: 1,
+                ease: Power2.easeInOut
+              }),
+              TweenMax.fromTo('.cage-container', 1, {
+                top: '50%',
+                scale: 0.8,
+                ease: Power2.easeInOut
+              },{
+                top: '60%',
+                scale: 0.9,
+                ease: Power2.easeInOut
+              })
+              
+            ])
+            let tvTween = new ScrollMagic.Scene({
+              triggerElement: '#scene6',
+              duration: 300
+            })
+            .triggerHook(1)
+            .setTween(tweenTv)
+            // .addIndicators()
+            .addTo(controller)
+
+            // Black
+            let tweenBlack = new TimelineMax ()
+            .add([
+              TweenMax.fromTo('#black', 1, {
+                transform: 'scale(25)',
+                ease: Power2.easeInOut
+              },{
+                transform: 'scale(3.0)',
+                ease: Power2.easeInOut
+              }),
+              TweenMax.to('#scene2', 1, {
+                opacity: 0
+              }),
+              TweenMax.to('#scene3', 1, {
+                opacity: 0
+              }),
+              TweenMax.to('#scene4', 1, {
+                opacity: 0
+              })
+            ])
+            let blackTween = new ScrollMagic.Scene({
+              triggerElement: '#scene7',
+              duration: 500
+            })
+            .triggerHook(9)
+            .setTween(tweenBlack)
+            // .addIndicators()
+            .addTo(controller)
+
+            // Text5
+            let tweenText5 = new TimelineMax ()
+            .add([
+              TweenMax.fromTo('#text5', 1, {
+                opacity: 0,
+                ease: Power1.easeInOut,
+                immediateRender: false,
+                yoyo: true
+              },{
+                opacity: 1,
+                ease: Power1.easeInOut,
+                immediateRender: false,
+                yoyo: true
+              })
+            ])
+            let text5Tween = new ScrollMagic.Scene({
+              triggerElement: '#scene7',
+              duration: 300
+            })
+            .triggerHook(9)
+            .offset(300)
+            .setTween(tweenText5)
+            // .addIndicators()
+            .addTo(controller)
+
+            // Lamp
+            let tweenLamp = new TimelineMax ()
+            .add([
+              TweenMax.fromTo('#lamp', 1, {
+                opacity: 0,
+                ease: Power1.easeInOut
+              },{
+                opacity: 1,
+                ease: Power1.easeInOut
+              }),
+              TweenMax.fromTo('#text5', 1, {
+                opacity: 1,
+                ease: Power1.easeInOut,
+                immediateRender: false,
+                yoyo: true
+              },{
+                opacity: 0,
+                ease: Power1.easeInOut,
+                immediateRender: false,
+                yoyo: true
+              })
+            ])
+            let lampTween = new ScrollMagic.Scene({
+              triggerElement: '#scene7',
+              duration: 300
+            })
+            .triggerHook(.9)
+            .offset(600)
+            .setTween(tweenLamp)
+            // .addIndicators()
+            .addTo(controller)
+
+            // Text6
+            let tweenText6 = new TimelineMax ()
+            .add([
+              TweenMax.fromTo('#text6', .5, {
+                opacity: 0,
+                ease: Power1.easeInOut
+              },{
+                opacity: 1,
+                ease: Power1.easeInOut
+              })
+            ])
+            let text6Tween = new ScrollMagic.Scene({
+              triggerElement: '#scene7',
+              duration: 300
+            })
+            .triggerHook(.5)
+            .offset(500)
+            .setTween(tweenText6)
+            // .addIndicators()
+            .addTo(controller)
+
+            // Text7
+            let tweenText7 = new TimelineMax ()
+            .add([
+              TweenMax.fromTo('#text7', 1, {
+                opacity: 0,
+                ease: Power1.easeInOut
+              },{
+                opacity: 1,
+                ease: Power1.easeInOut
+              }),
+              TweenMax.fromTo('#text6', 1, {
+                opacity: 1,
+                ease: Power1.easeInOut,
+                immediateRender: false
+              },{
+                opacity: 0,
+                ease: Power1.easeInOut
+              })
+            ])
+            let text7Tween = new ScrollMagic.Scene({
+              triggerElement: '#scene7',
+              duration: 300
+            })
+            .triggerHook(.5)
+            .offset(1000)
+            .setTween(tweenText7)
+            // .addIndicators()
+            .addTo(controller)
 
 
-        // Black out
-        let tweenBlackout = new TimelineMax ()
-        .add([
-          TweenMax.fromTo('#black', 1, {
-            transform: 'scale(3)',
-            immediateRender: false,
-            ease: Power2.easeInOut
-          },{
-            transform: 'scale(25)',
-            immediateRender: false,
-            ease: Power2.easeInOut
-          }),
-          TweenMax.fromTo('#tv', .1, {
-            opacity: 1
-          },{
-            opacity: 0
-          }),
-          TweenMax.fromTo('.cage-container', 1, {
-            opacity: 1
-          },{
-            opacity: 0
-          })
-        ])
-        let blackoutTween = new ScrollMagic.Scene({
-          triggerElement: '#scene8',
-          duration: 300
-        })
-        .triggerHook(.5)
-        .setTween(tweenBlackout)
-        .addIndicators()
-        .addTo(controller)
+            // Text8
+            let tweenText8 = new TimelineMax ()
+            .add([
+              TweenMax.fromTo('#text8', 1, {
+                opacity: 0,
+                ease: Power1.easeInOut
+              },{
+                opacity: 1,
+                ease: Power1.easeInOut
+              }),
+              TweenMax.fromTo('#text7', 1, {
+                opacity: 1,
+                ease: Power1.easeInOut,
+                immediateRender: false
+              },{
+                opacity: 0,
+                ease: Power1.easeInOut
+              })
+            ])
+            let text8Tween = new ScrollMagic.Scene({
+              triggerElement: '#scene7',
+              duration: 400
+            })
+            .triggerHook(.5)
+            .offset(1500)
+            .setTween(tweenText8)
+            .addIndicators()
+            .addTo(controller)
+
+            // Black out
+            let tweenBlackout = new TimelineMax ()
+            .add([
+              TweenMax.fromTo('#black', 1, {
+                transform: 'scale(3)',
+                immediateRender: false,
+                ease: Power2.easeInOut
+              },{
+                transform: 'scale(25)',
+                immediateRender: false,
+                ease: Power2.easeInOut
+              }),
+              TweenMax.fromTo('#tv', .1, {
+                opacity: 0
+              },{
+                opacity: 0
+              }),
+              TweenMax.fromTo('.cage-container', 1, {
+                opacity: 1
+              },{
+                opacity: 0
+              })
+            ])
+            let blackoutTween = new ScrollMagic.Scene({
+              triggerElement: '#scene8',
+              duration: 300
+            })
+            .triggerHook(.5)
+            .setTween(tweenBlackout)
+            // .addIndicators()
+            .addTo(controller)
+          }
+          this.complete = true
+          setTimeout(() => {
+            this.show = true
+          }, 1500)
+        }
       }
-
     })
   </script>
 </body>
