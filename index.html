@@ -22,7 +22,7 @@
 
     <div v-show="complete" class="stage" :class="{hide: !show}">
       <div class="nav-bar">
-        <img src="/assets/logo.svg" height="80%">
+        <img src="/assets/logo.svg" height="120%">
         <div class="menu">
           <div><a href="" class="active">หน้าแรก</a></div>
           <div><a href="/menu1" class="">ความช่วยเหลือ</a></div>
@@ -40,8 +40,11 @@
             เป็นการสนับสนุน
           </div>
           <p>ดูอิทไรท์ดอทคอม พื้นที่สร้างสังคมที่น่าอยู่สำหรับทุกคน</p>
-          <div>
-            <img src="/assets/mouse.png" alt="">
+          <div style="text-align: center">
+            <!--<img src="/assets/mouse.png" width="60%">-->
+
+            <div class="u125help-mouse-down"><i class="u125help-mouse-wheel"></i></div>
+            <span class="u125help-down"></span>
           </div>
         </div>
         <div class="cloud-container">
@@ -62,7 +65,7 @@
 
       <div id="scene2">
         <div class="city-container">
-          <img id="cup" class="center" src="/assets/cup.svg" width="250px">
+          <img id="cup" class="center" src="/assets/cup.svg" width="400px">
           <img id="building" class="center" src="/assets/city1.png" width="100%">
           <img id="city-scape" class="center" src="/assets/city2.svg" width="100%">
         </div>
@@ -83,7 +86,7 @@
           อยู่ที่ประมาณ <br> 
           300 - 1,500 บาท
         </div>
-        <div id="text3">
+        <div id="text3" class="center" style="margin-left: 200px">
           <span style="font-size: 1.5em;">เด็ก 1 คน</span> <br>
           ถูกซื้อให้มาด้วยเงินเพียง <br>
           1,500 - 3,000 บาทเท่านั้น
@@ -93,6 +96,7 @@
       <div id="scene4">
         <img id="fall-cash" class="center" src="/assets/cash.svg">
         <div id="text4" class="center">
+          <span style="font-size: 2em;">“เงิน”</span><br>
           ที่เด็กได้จากการขอทาน <br>
           แปรเปลี่ยนไปได้หลายอย่าง…
         </div>
@@ -104,7 +108,7 @@
 
       <div id="scene5">
         <div class="hand-container" style="text-align: center">
-          <img id="hand" src="/assets/hand.svg">
+          <img id="hand" src="/assets/h.svg" width="90%">
         </div>
         <div class="hero-container" style="text-align: center">
           <img id="hero" src="/assets/hero.svg">
@@ -119,6 +123,10 @@
       <div id="scene6">
         <div class="tv-container">
           <img id="tv" src="assets/tv.svg" >
+        </div>
+        <div class="video-container">
+          <div class="vud-c"></div>
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/ErZv_A40KUc" frameborder="0"></iframe>
         </div>
       </div>
 
@@ -306,27 +314,6 @@
                 top: -1900,
                 ease: Linear.easeNone
               }),
-              TweenMax.fromTo('#text2-1', 2, {
-                top: (h * 10) / 100,
-                ease: Linear.easeNone
-              },{
-                top: (h * 20) / 100,
-                ease: Linear.easeNone
-              }),
-              TweenMax.fromTo('#text2', 1, {
-                top: (h * 25) / 100,
-                ease: Linear.easeNone
-              },{
-                top: (h * 35) / 100,
-                ease: Linear.easeNone
-              }),
-              TweenMax.fromTo('#text3', 1, {
-                top: (h * 45) / 100,
-                ease: Linear.easeNone
-              },{
-                top: (h * 60) / 100,
-                ease: Linear.easeNone
-              })
             ])
 
             let moneyScene = new ScrollMagic.Scene({
@@ -337,6 +324,77 @@
             .setTween(tweenMoney)
             // .addIndicators()
             .addTo(controller)
+
+
+            let tweenA = new TimelineMax ()
+            .add([
+              TweenMax.fromTo('#text2-1', 1, {
+                top: (h * 10) / 100,
+                opacity: 0,
+                ease: Linear.easeNone
+              },{
+                top: (h * 10) / 100,
+                opacity: 1,
+                ease: Linear.easeNone
+              })
+            ])
+
+            let AA = new ScrollMagic.Scene({
+              triggerElement: '#scene3',
+              duration: 300
+            })
+            .triggerHook(.5)
+            .offset(300)
+            .setTween(tweenA)
+            .addTo(controller)
+
+
+            let tweenB = new TimelineMax ()
+            .add([
+              TweenMax.fromTo('#text2', 1, {
+                top: (h * 30) / 100,
+                opacity: 0,
+                ease: Linear.easeNone
+              },{
+                top: (h * 30) / 100,
+                opacity: 1,
+                ease: Linear.easeNone
+              }),
+            ])
+
+            let BB = new ScrollMagic.Scene({
+              triggerElement: '#scene3',
+              duration: 300
+            })
+            .triggerHook(.5)
+            .offset(1200)
+            // .addIndicators()
+            .setTween(tweenB)
+            .addTo(controller)
+
+            let tweenC = new TimelineMax ()
+            .add([
+              TweenMax.fromTo('#text3', 1, {
+                top: (h * 62) / 100,
+                opacity: 0,
+                ease: Linear.easeNone
+              },{
+                top: (h * 62) / 100,
+                opacity: 1,
+                ease: Linear.easeNone
+              })
+            ])
+
+            let CC = new ScrollMagic.Scene({
+              triggerElement: '#scene3',
+              duration: 300
+            })
+            .triggerHook(.5)
+            .offset(1800)
+            // .addIndicators()
+            .setTween(tweenC)
+            .addTo(controller)
+
 
             //Money Flow in pipe scene
             let moneyPin = new ScrollMagic.Scene({
@@ -551,11 +609,69 @@
             // .addIndicators()
             .addTo(controller)
 
+            let tweenV = new TimelineMax ()
+            .add([
+              TweenMax.fromTo('.video-container', 1, {
+                opacity: 0,
+                ease: Power2.easeInOut
+              },{
+                opacity: 1,
+                ease: Power2.easeInOut
+              }),
+              TweenMax.fromTo('.vud-c', 1, {
+                top: 0,
+                ease: Power2.easeInOut
+              },{
+                top: 3000,
+                ease: Power2.easeInOut
+              }),
+            ])
+            let VV = new ScrollMagic.Scene({
+              triggerElement: '#scene6',
+              duration: 300
+            })
+            .triggerHook(1)
+            .offset(250)
+            .setTween(tweenV)
+            // .addIndicators()
+            .addTo(controller)
+
+            let tweenZ = new TimelineMax ()
+            .add([
+              TweenMax.fromTo('.video-container', 1, {
+                opacity: 1,
+                ease: Power2.easeInOut,
+                immediateRender: false,
+              },{
+                opacity: 0,
+                ease: Power2.easeInOut,
+                immediateRender: false,
+              }),
+              TweenMax.fromTo('.vud-c', 1, {
+                top: 3000,
+                ease: Power2.easeInOut,
+                immediateRender: false,
+              },{
+                top: 0,
+                ease: Power2.easeInOut,
+                immediateRender: false,
+              }),
+            ])
+            let ZZ = new ScrollMagic.Scene({
+              triggerElement: '#scene6',
+              duration: 300
+            })
+            .triggerHook(1)
+            .offset(650)
+            .setTween(tweenZ)
+            // .addIndicators()
+            .addTo(controller)
+
             // Black
             let tweenBlack = new TimelineMax ()
             .add([
               TweenMax.fromTo('#black', 1, {
-                transform: 'scale(25)',
+                transform: 'scale(28)',
                 ease: Power2.easeInOut
               },{
                 transform: 'scale(3.0)',
@@ -749,7 +865,7 @@
                 immediateRender: false,
                 ease: Power2.easeInOut
               },{
-                transform: 'scale(25)',
+                transform: 'scale(28)',
                 immediateRender: false,
                 ease: Power2.easeInOut
               }),
