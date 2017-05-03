@@ -1,0 +1,302 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Baby Thesis</title>
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.4/jquery.fullpage.min.css">
+  <script src="https://code.createjs.com/preloadjs-0.6.2.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.14.2/TweenMax.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.3/ScrollMagic.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.3/plugins/animation.gsap.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.3/plugins/debug.addIndicators.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.0/vue.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.4/vendors/scrolloverflow.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.4/jquery.fullpage.min.js"></script>
+  <style>
+    .p {
+      height: 100%;
+    }
+    .p1 {
+      background-image: url(/assets/p1b.jpg);
+      background-size: cover;
+    }
+    .p2 {
+      background-image: url(/assets/p2b.jpg);
+      background-size: cover;
+    }
+    .p3 {
+      background-image: url(/assets/p3b.jpg);
+      background-size: cover;
+    }
+    .p4 {
+      background-image: url(/assets/p3b.jpg);
+      background-size: cover;
+    }
+    .p5 {
+      text-align: center;
+      background-image: url(/assets/p5b2.jpg);
+      background-size: cover;
+    }
+    .p6 {
+      background-image: url(/assets/p6b.jpg);
+      background-size: cover;
+    }
+    .p7 {
+      background-image: url(/assets/p7b.jpg);
+      background-size: cover;
+    }
+
+    .t {
+      color: white;
+      font-family: PSL2;
+      font-size: 17px;
+      line-height: 19px;
+    }
+    .t1 {
+      position: absolute;
+      top: 79px;
+      text-align: center;
+      margin: auto;
+      left: 0;
+      right: 0;
+      letter-spacing: 1px;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+    }
+    .t2 {
+      position: absolute;
+      display: inline-table;
+      top: 79px;
+      text-align: center;
+      margin: auto;
+      right: 16px;
+      top: 0;
+      bottom: 0;
+      letter-spacing: 1px;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+    }
+    .t3 {
+      position: absolute;
+      bottom: 79px;
+      text-align: center;
+      margin: auto;
+      left: 0;
+      right: 0;
+      letter-spacing: 1px;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+    }
+
+
+    .p3 {
+      display: flex;
+      flex-direction: column;
+      align-content: center;
+      justify-content: center;
+    }
+    .t4 {
+      font-size: 40px;
+      line-height: 42px;
+      text-align: center;
+      letter-spacing: 1px;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+    }
+    .t5 {
+      font-size: 24px;
+      line-height: 26px;
+      text-align: center;
+      letter-spacing: 1px;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+    }
+    .t6 {
+      font-size: 24px;
+      line-height: 26px;
+      text-align: center;
+      letter-spacing: 1px;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+    }
+
+    .p5i {
+      position: absolute;
+      margin: auto;
+      left: 0;
+      right: 0;
+    }
+  </style>
+</head>
+<body style="overflow-x: hidden">
+  <div id="app">
+    
+    <div v-show="!show" class="loading">
+      Loading... {{ Math.floor(percent) }}
+    </div>
+
+    <div v-show="complete" class="stage" :class="{hide: !show}">
+      <div id="fullpage">
+      <div class="section">
+        <div class="p p1">
+        </div>
+      </div>
+      <div class="section">
+        <div class="p p2">
+          <div class="t t1">
+            การค้ามนุษย์ <br>
+            เพื่อการขอทาน <br>
+            ธุระกิจที่ใช้ความน่าสงสาร <br>
+            มาเป็นจุดขาย
+          </div>
+          <div class="t t2">
+            รายได้เฉลี่ยต่อวัน <br>
+            ของเด็กขอทาน <br>
+            อยู่ที่ประมาณ <br>
+            300 - 1,500 บาท
+          </div>
+          <div class="t t3">
+            เด็ก 1 คน <br>
+            ถูกซื้อให้มาด้วยเงินเพียง <br>
+            1,500 - 3,000 บาทเท่านั้น
+          </div>
+        </div>
+      </div>
+      <div class="section">
+        <div class="p p3">
+          <div class="t t4">“เงิน”</div>
+          <div class="t t5">ที่เด็กได้จากการขอทาน <br> แปรเปลี่ยนไปได้หลายอย่าง… </div>
+          <div class="t t6">แม้กระทั่งการซื้อเด็กคนใหม่ <br> เข้าสู่วงจรขอทาน </div>
+        </div>
+      </div>
+      <div class="section">
+        <div class="p p5">
+          <img class="p5i" src="/assets/p5t.png" width="60%">
+        </div>
+      </div>
+      <div class="section">
+        <div class="p p6"></div>
+      </div>
+      <div class="section">
+        <div class="p p7"></div>
+      </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    new Vue({ 
+      el: '#app', 
+      name: 'app',
+      data () {
+        return {
+          show: false,
+          complete: false,
+          percent: 0
+        }
+      },
+      mounted () {
+        this.loadImage()
+        console.log('VUE')
+      },
+      methods: {
+        loadImage () {
+          var queue = new createjs.LoadQueue()
+          queue.addEventListener("progress", this.handleProgress)
+          queue.addEventListener("complete", this.handleFileComplete)
+          queue.loadFile("/style.css")
+          queue.loadFile("/assets/p1b.jpg")
+          queue.loadFile("/assets/p2b.jpg")
+          queue.loadFile("/assets/p3b.jpg")
+          queue.loadFile("/assets/p5b2.jpg")
+          queue.loadFile("/assets/p5t.png")
+          queue.loadFile("/assets/p6b.jpg")
+          queue.loadFile("/assets/p7b.jpg")
+        },
+        handleProgress (e) {
+          this.percent = e.progress * 100
+          console.log('Loading ', e.progress * 100, '%')
+        },
+        handleFileComplete () {
+          console.log('LOAD COMPLETTE')
+          this.initial()
+        },
+        initial () {
+          this.complete = true
+          $(document).ready(function() {
+            $('#fullpage').fullpage({
+              onLeave: function(index, nextIndex, direction){
+                console.log(index, nextIndex, direction)
+                if (direction === 'down' || direction === 'up') {
+                  if (nextIndex === 2) {
+                    TweenMax.fromTo('.t1', 1.8, {
+                      right: -1500,
+                      opacity: 0,
+                      ease: Power2.easeInOut,
+                    }, {
+                      right: 0,
+                      opacity: 1,
+                      ease: Back.easeInOut,
+                    }),
+                    TweenMax.fromTo('.t2', 1.9, {
+                      right: 1500,
+                      opacity: 0,
+                      ease: Power2.easeInOut,
+                    }, {
+                      right: 24,
+                      opacity: 1,
+                      ease: Back.easeInOut,
+                    }),
+                    TweenMax.fromTo('.t3', 2, {
+                      right: -1500,
+                      opacity: 0,
+                      ease: Power2.easeInOut,
+                    }, {
+                      right: 0,
+                      opacity: 1,
+                      ease: Back.easeInOut,
+                    })
+                  }
+
+                  if (nextIndex === 3) {
+                    TweenMax.fromTo('.t4', 2, {
+                      opacity: 0,
+                      ease: Power2.easeInOut,
+                    }, {
+                      opacity: 1,
+                      ease: Back.easeInOut,
+                    }),
+                    TweenMax.fromTo('.t5', 3, {
+                      opacity: 0,
+                      delay: 200,
+                      ease: Power2.easeInOut,
+                    }, {
+                      opacity: 1,
+                      ease: Back.easeInOut,
+                    }),
+                    TweenMax.fromTo('.t6', 4, {
+                      opacity: 0,
+                      ease: Power2.easeInOut,
+                    }, {
+                      opacity: 1,
+                      ease: Back.easeInOut,
+                    })
+                  }
+
+                  if (nextIndex === 4) {
+                    TweenMax.fromTo('.p5i', 2, {
+                      top: -1000,
+                      ease: Power2.easeInOut,
+                    }, {
+                      top: 40,
+                      ease: Back.easeInOut,
+                    })
+                  }
+                }
+              }
+            })
+          })
+          setTimeout(() => {
+            this.show = true
+          }, 800)
+        }
+      }
+    })
+  </script>
+</body>
+</html>

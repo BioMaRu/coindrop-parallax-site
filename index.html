@@ -1,10 +1,33 @@
 <html>
 <head>
   <meta charset="utf-8">
+  <script>
+    // Minified version of isMobile included in the HTML since it's small
+    !function(a){var b=/iPhone/i,c=/iPod/i,d=/iPad/i,e=/(?=.*\bAndroid\b)(?=.*\bMobile\b)/i,f=/Android/i,g=/(?=.*\bAndroid\b)(?=.*\bSD4930UR\b)/i,h=/(?=.*\bAndroid\b)(?=.*\b(?:KFOT|KFTT|KFJWI|KFJWA|KFSOWI|KFTHWI|KFTHWA|KFAPWI|KFAPWA|KFARWI|KFASWI|KFSAWI|KFSAWA)\b)/i,i=/IEMobile/i,j=/(?=.*\bWindows\b)(?=.*\bARM\b)/i,k=/BlackBerry/i,l=/BB10/i,m=/Opera Mini/i,n=/(CriOS|Chrome)(?=.*\bMobile\b)/i,o=/(?=.*\bFirefox\b)(?=.*\bMobile\b)/i,p=new RegExp("(?:Nexus 7|BNTV250|Kindle Fire|Silk|GT-P1000)","i"),q=function(a,b){return a.test(b)},r=function(a){var r=a||navigator.userAgent,s=r.split("[FBAN");return"undefined"!=typeof s[1]&&(r=s[0]),s=r.split("Twitter"),"undefined"!=typeof s[1]&&(r=s[0]),this.apple={phone:q(b,r),ipod:q(c,r),tablet:!q(b,r)&&q(d,r),device:q(b,r)||q(c,r)||q(d,r)},this.amazon={phone:q(g,r),tablet:!q(g,r)&&q(h,r),device:q(g,r)||q(h,r)},this.android={phone:q(g,r)||q(e,r),tablet:!q(g,r)&&!q(e,r)&&(q(h,r)||q(f,r)),device:q(g,r)||q(h,r)||q(e,r)||q(f,r)},this.windows={phone:q(i,r),tablet:q(j,r),device:q(i,r)||q(j,r)},this.other={blackberry:q(k,r),blackberry10:q(l,r),opera:q(m,r),firefox:q(o,r),chrome:q(n,r),device:q(k,r)||q(l,r)||q(m,r)||q(o,r)||q(n,r)},this.seven_inch=q(p,r),this.any=this.apple.device||this.android.device||this.windows.device||this.other.device||this.seven_inch,this.phone=this.apple.phone||this.android.phone||this.windows.phone,this.tablet=this.apple.tablet||this.android.tablet||this.windows.tablet,"undefined"==typeof window?this:void 0},s=function(){var a=new r;return a.Class=r,a};"undefined"!=typeof module&&module.exports&&"undefined"==typeof window?module.exports=r:"undefined"!=typeof module&&module.exports&&"undefined"!=typeof window?module.exports=s():"function"==typeof define&&define.amd?define("isMobile",[],a.isMobile=s()):a.isMobile=s()}(this);
+
+
+    // My own arbitrary use of isMobile, as an example
+    (function () {
+        var MOBILE_SITE = '/m.html', // site to redirect to
+            NO_REDIRECT = 'noredirect'; // cookie to prevent redirect
+
+        // I only want to redirect iPhones, Android phones and a handful of 7" devices
+        if (isMobile.apple.phone || isMobile.android.phone || isMobile.seven_inch) {
+
+            // Only redirect if the user didn't previously choose
+            // to explicitly view the full site. This is validated
+            // by checking if a "noredirect" cookie exists
+            if ( document.cookie.indexOf(NO_REDIRECT) === -1 ) {
+                document.location = MOBILE_SITE;
+            }
+        }
+    })();
+</script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Baby Thesis</title>
   <link rel="stylesheet" href="/style.css">
   <script src="https://code.createjs.com/preloadjs-0.6.2.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ismobilejs/0.4.1/isMobile.min.js"></script>
   <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.14.2/TweenMax.min.js"></script>
@@ -65,8 +88,8 @@
 
       <div id="scene2">
         <div class="city-container">
-          <img id="cup" class="center" src="/assets/cup.svg" width="400px">
-          <img id="building" class="center" src="/assets/city1.png" width="100%">
+          <img id="cup" class="center" src="/assets/cup.svg" width="370px">
+          <img id="building" class="center" src="/assets/city1.png" width="90%">
           <img id="city-scape" class="center" src="/assets/city2.svg" width="100%">
         </div>
       </div>
@@ -76,7 +99,7 @@
         <img id="bank-flow" src="/assets/money.svg" width="100%">
         <img id="money-blur" src="/assets/money-blur.png" width="100%">
         <img id="coin-blur" src="/assets/coin-blur.png" width="100%">
-        <div id="text2-1">
+        <div id="text2-1"  class="center">
           การค้ามนุษย์เพื่อการขอทาน <br>
           ธุรกิจที่ใช้ความน่าสงสารมาเป็นจุดขาย
         </div>
@@ -501,7 +524,7 @@
             let tweenHero = new TimelineMax ()
             .add([
               TweenMax.fromTo('#hero', 1, {
-                right: -1000,
+                right: -1500,
                 ease: Power2.easeInOut
               }, {
                 left: 0,
@@ -510,10 +533,11 @@
               })
             ])
             let heroTween = new ScrollMagic.Scene({
-              triggerElement: '#hero',
-              duration: 300
+              triggerElement: '#scene5',
+              duration: 500
             })
-            .triggerHook(.60)
+            .triggerHook(.3)
+            .offset(500)
             .setTween(tweenHero)
             // .addIndicators()
             .addTo(controller)
@@ -521,16 +545,17 @@
             let tweenHero2 = new TimelineMax ()
             .add([
               TweenMax.to('#hero', 1, {
-                left: -1000,
-                ease: Power2.easeInOut
+                left: -1500,
+                ease: Power2.easeInOut,
+                immediateRender: false,
               })
             ])
             let heroTween2 = new ScrollMagic.Scene({
-              triggerElement: '#hero',
+              triggerElement: '#scene5',
               duration: 500
             })
-            .triggerHook(.60)
-            .offset(500)
+            .triggerHook(.50)
+            .offset(1200)
             .setTween(tweenHero2)
             // .addIndicators()
             .addTo(controller)
@@ -569,10 +594,11 @@
               })
             ])
             let boyTween = new ScrollMagic.Scene({
-              triggerElement: '#hero',
+              triggerElement: '#scene5',
               duration: 450
             })
             .triggerHook(.1)
+            .offset(1000)
             .setTween(tweenBoy)
             // .addIndicators()
             .addTo(controller)
