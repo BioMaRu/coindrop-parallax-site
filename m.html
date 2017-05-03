@@ -5,6 +5,7 @@
   <title>Baby Thesis</title>
   <link rel="stylesheet" href="/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.4/jquery.fullpage.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.8.0/jquery.modal.css">
   <script src="https://code.createjs.com/preloadjs-0.6.2.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.14.2/TweenMax.min.js"></script>
@@ -14,12 +15,13 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.0/vue.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.4/vendors/scrolloverflow.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.4/jquery.fullpage.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.8.0/jquery.modal.min.js"></script>
   <style>
     .p {
       height: 100%;
     }
     .p1 {
-      background-image: url(/assets/p1b.jpg);
+      background-image: url(/assets/p1.png);
       background-size: cover;
     }
     .p2 {
@@ -116,11 +118,69 @@
       text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
     }
 
+    .t7 {
+      font-size: 24px;
+      line-height: 27px;
+      position: absolute;
+      bottom: 24px;
+      text-align: center;
+      margin: auto;
+      left: 0;
+      right: 0;
+      letter-spacing: 1px;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+      margin-bottom: 16px;
+    }
+
+    .t8 {
+      font-size: 34px;
+      line-height: 37px;
+      position: absolute;
+      top: 60px;
+      text-align: center;
+      margin: auto;
+      left: 0;
+      right: 0;
+      letter-spacing: 1px;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+    }
+
     .p5i {
       position: absolute;
       margin: auto;
       left: 0;
       right: 0;
+    }
+    .buttonn {
+      font-size: 24px;
+      display: inline-block;
+      border-radius: 50px;
+      padding: 6px 24px;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.0);
+      background-color: #03a9f7;
+    }
+
+    .m-nav-bar {
+      padding: 16px;
+    }
+    .m-nav-bar img {
+      float: left;
+    }
+    .menu > div {
+      float: right;
+      padding: 0 4px;
+    }
+    .menu > div a {
+      color: white;
+      text-decoration: none;
+    }
+    .menu > div a.active {
+      color: black;
+      text-decoration: none;
+    }
+    .modal {
+      padding: 0 !important;
+      width: 100% !important;
     }
   </style>
 </head>
@@ -135,6 +195,15 @@
       <div id="fullpage">
       <div class="section">
         <div class="p p1">
+          <div class="m-nav-bar">
+            <img src="/assets/logo.svg" height="50">
+            <div class="menu">
+              <div><a href="" class="">ติดต่อเรา</a></div>
+              <div><a href="" class="">โครงการ</a></div>
+              <div><a href="/menu1" class="">ความช่วยเหลือ</a></div>
+              <div><a href="" class="active">หน้าแรก</a></div>
+            </div>
+          </div>
         </div>
       </div>
       <div class="section">
@@ -171,10 +240,26 @@
         </div>
       </div>
       <div class="section">
-        <div class="p p6"></div>
+        <div class="p p6">
+          <div class="t t7">
+            <!-- Modal HTML embedded directly into document -->
+            <div id="ex1" style="display:none;">
+              <iframe width="100%" src="https://www.youtube.com/embed/ErZv_A40KUc" frameborder="0"></iframe>
+            </div>
+            “เงินไม่ใช่สิ่งที่เด็กต้องการ <br>
+            แต่คือการช่วยเหลือ <br>
+            ให้ได้ออกจากข้างถนนต่างหาก” <br> <br>
+            <a href="#ex1" style="color: white" rel="modal:open"><div class="buttonn">กดเลย</div></a>
+          </div>
+        </div>
       </div>
       <div class="section">
-        <div class="p p7"></div>
+        <div class="p p7">
+          <div class="t t8">
+            “ให้ทานอย่างถูกวิธี <br>
+            ลดวิถีการขอทาน” 
+          </div>
+        </div>
       </div>
       </div>
     </div>
@@ -285,6 +370,26 @@
                     }, {
                       top: 40,
                       ease: Back.easeInOut,
+                    })
+                  }
+
+                  if (nextIndex === 5) {
+                    TweenMax.fromTo('.t7', 1.5, {
+                      opacity: 0,
+                      ease: Power1.easeInOut,
+                    }, {
+                      opacity: 1,
+                      ease: Power1.easeInOut,
+                    })
+                  }
+
+                  if (nextIndex === 6) {
+                    TweenMax.fromTo('.t8', 1.5, {
+                      opacity: 0,
+                      ease: Power1.easeInOut,
+                    }, {
+                      opacity: 1,
+                      ease: Power1.easeInOut,
                     })
                   }
                 }
