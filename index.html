@@ -47,10 +47,9 @@
       <div class="nav-bar">
         <img src="/assets/logo.svg" height="120%">
         <div class="menu">
-          <div><a href="" class="active">หน้าแรก</a></div>
-          <div><a href="/menu1" class="">ความช่วยเหลือ</a></div>
-          <div><a href="" class="">โครงการ</a></div>
-          <div><a href="" class="">ติดต่อเรา</a></div>
+          <div><a href="/" class="active">หน้าแรก</a></div>
+          <div><a href="/doitright/help.html" class="">ความช่วยเหลือ</a></div>
+          <div><a href="/doitright/contact.html" class="">ติดต่อเรา</a></div>
         </div>
       </div>
       <div id="scene1">
@@ -191,10 +190,13 @@
       </div>
 
       <div id="scene8">
-        <div id="next-button" class="button-container">
-          <a href="/menu1" target="_blank"><div class="button-next">
-            <div>ไปต่อ</div> <img src="assets/right.svg" alt="">
-          </div>
+        <div id="next-button" class="button-container" style="z-index: 9999999;
+    position: absolute;">
+          <a href="/doitright/help.html" target="_blank" style="z-index: 9999999;
+    position: absolute;">
+            <div class="button-next">
+              <div>ไปต่อ</div> <img src="assets/right.svg" alt="">
+            </div>
           </a>
         </div>
       </div>
@@ -645,7 +647,7 @@
                 ease: Power2.easeInOut
               }),
               TweenMax.fromTo('.vud-c', 1, {
-                top: 0,
+                top: 100,
                 ease: Power2.easeInOut
               },{
                 top: 3000,

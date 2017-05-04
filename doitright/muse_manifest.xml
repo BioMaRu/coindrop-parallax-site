@@ -1,0 +1,138 @@
+<manifest alg="2" build="2017.0.1.363" opt="false" iceEnabled="true" iceMarkupVersion="2" iceEnabledOptions="link,responsive,cachebuster" exportTarget="other" domain="doitright.com" resolutions="1x,2x" timestamp="1493839634800">
+  <folder name="css">
+    <file name="site_global.css" crc="337350601"/>
+    <file name="master_a-master.css" crc="3806506678" ref="index:ติดต่อเรา"/>
+    <file name="index.css" crc="243664335" ref="index"/>
+    <file name="_________.css" crc="3809336181" ref="ติดต่อเรา"/>
+  </folder>
+  <folder name="assets">
+    <file name="1.mp4" crc="3988410932" seo="true" mt="1493744025000"/>
+  </folder>
+  <folder name="scripts">
+    <file name="jquery-1.8.3.min.js" crc="209076791" ref="index:ติดต่อเรา"/>
+    <file name="museutils.js" crc="4148063285" ref="index:ติดต่อเรา"/>
+    <file name="whatinput.js" crc="86476730" ref="index:ติดต่อเรา"/>
+    <file name="museconfig.js" crc="172512987" ref="index:ติดต่อเรา"/>
+    <file name="jquery.musepolyfill.bgsize.js" crc="4001026563" ref="index:ติดต่อเรา"/>
+    <file name="webpro.js" crc="3986320349" ref="index"/>
+    <file name="musewpslideshow.js" crc="405464237" ref="index"/>
+    <file name="jquery.museoverlay.js" crc="305414130" ref="index"/>
+    <file name="touchswipe.js" crc="221459597" ref="index"/>
+    <file name="jquery.watch.js" crc="437028206" ref="index:ติดต่อเรา"/>
+    <file name="require.js" crc="4159430777" ref="index:ติดต่อเรา"/>
+  </folder>
+  <folder name="images">
+    <file name="logo.jpg" crc="514273151" ref="index"/>
+    <file name="logo_2x.jpg" crc="4091300972" ref="index"/>
+    <file name="หน้า-static00.jpg" crc="4202252578" ref="index"/>
+    <file name="หน้า-static01.jpg" crc="4115383362" ref="index"/>
+    <file name="หน้า-static02.jpg" crc="3779782842" ref="index"/>
+    <file name="หน้า-static03.jpg" crc="3875273973" ref="index"/>
+    <file name="icon1.png" crc="4079623217" ref="index"/>
+    <file name="u2006-4.png" crc="4168192727" ref="index"/>
+    <file name="u2006-4_2x.png" crc="3780844139" ref="index"/>
+    <file name="u2034-5.png" crc="105123479" ref="index"/>
+    <file name="u2034-5_2x.png" crc="3899897092" ref="index"/>
+    <file name="icon2.png" crc="505623387" ref="index"/>
+    <file name="u2044-4.png" crc="430189292" ref="index"/>
+    <file name="u2044-4_2x.png" crc="302390740" ref="index"/>
+    <file name="u2018-5.png" crc="73661819" ref="index"/>
+    <file name="u2018-5_2x.png" crc="4234676981" ref="index"/>
+    <file name="icon3.png" crc="3976464424" ref="index"/>
+    <file name="u2047-4.png" crc="4073994775" ref="index"/>
+    <file name="u2047-4_2x.png" crc="189850110" ref="index"/>
+    <file name="u2028-4.png" crc="25676978" ref="index"/>
+    <file name="u2028-4_2x.png" crc="466339404" ref="index"/>
+    <file name="blank.gif" crc="4208392903" ref="index"/>
+    <file name="u2363_states.png" crc="3968315075" ref="index"/>
+    <file name="u2363_states_2x.png" crc="379848091" ref="index"/>
+    <file name="u2363_states-r.png" crc="3888137966" ref="index"/>
+    <file name="u2363_states-r_2x.png" crc="3785146702" ref="index"/>
+    <file name="u2363_states-m.png" crc="4128016999" ref="index"/>
+    <file name="u2363_states-m_2x.png" crc="4262088086" ref="index"/>
+    <file name="13.jpg" crc="408706597" ref="index"/>
+    <file name="หน้า-static09.jpg" crc="42088065" ref="index"/>
+    <file name="หน้า-static10.jpg" crc="3796095350" ref="index"/>
+    <file name="u2943-4.png" crc="4168192727" ref="index"/>
+    <file name="u2943-4_2x.png" crc="3780844139" ref="index"/>
+    <file name="u2939-5.png" crc="105123479" ref="index"/>
+    <file name="u2939-5_2x.png" crc="3899897092" ref="index"/>
+    <file name="u2947-4.png" crc="430189292" ref="index"/>
+    <file name="u2947-4_2x.png" crc="302390740" ref="index"/>
+    <file name="u2927-5.png" crc="225439877" ref="index"/>
+    <file name="u2927-5_2x.png" crc="70147923" ref="index"/>
+    <file name="u2935_states.png" crc="3968315075" ref="index"/>
+    <file name="u2935_states_2x.png" crc="379848091" ref="index"/>
+    <file name="u2935_states-r.png" crc="3888137966" ref="index"/>
+    <file name="u2935_states-r_2x.png" crc="3785146702" ref="index"/>
+    <file name="u2935_states-m.png" crc="4128016999" ref="index"/>
+    <file name="u2935_states-m_2x.png" crc="4262088086" ref="index"/>
+    <file name="หน้า-static11.jpg" crc="244649774" ref="index"/>
+    <file name="หน้า-static06.jpg" crc="3864204005" ref="index"/>
+    <file name="หน้า-static05.jpg" crc="4238275410" ref="index"/>
+    <file name="หน้า-static04.jpg" crc="304790171" ref="index"/>
+    <file name="icon4.png" crc="4188774532" ref="index"/>
+    <file name="icon4_2x.png" crc="3803975601" ref="index"/>
+    <file name="u3178-4.png" crc="3977150589" ref="index"/>
+    <file name="u3178-4_2x.png" crc="151317439" ref="index"/>
+    <file name="u3175-7.png" crc="491805817" ref="index"/>
+    <file name="u3175-7_2x.png" crc="514690687" ref="index"/>
+    <file name="u3187_states.png" crc="3968315075" ref="index"/>
+    <file name="u3187_states_2x.png" crc="379848091" ref="index"/>
+    <file name="u3187_states-r.png" crc="3888137966" ref="index"/>
+    <file name="u3187_states-r_2x.png" crc="3785146702" ref="index"/>
+    <file name="u3187_states-m.png" crc="4128016999" ref="index"/>
+    <file name="u3187_states-m_2x.png" crc="4262088086" ref="index"/>
+    <file name="หน้า-static12.jpg" crc="4135675320" ref="index"/>
+    <file name="หน้า-static08.jpg" crc="3779782842" ref="index"/>
+    <file name="หน้า-static07.jpg" crc="3875273973" ref="index"/>
+    <file name="u3256-4.png" crc="4073994775" ref="index"/>
+    <file name="u3256-4_2x.png" crc="189850110" ref="index"/>
+    <file name="u3229-4.png" crc="4168192727" ref="index"/>
+    <file name="u3229-4_2x.png" crc="3780844139" ref="index"/>
+    <file name="u3247-5.png" crc="3838172162" ref="index"/>
+    <file name="u3247-5_2x.png" crc="4176299947" ref="index"/>
+    <file name="u3250-6.png" crc="3931075631" ref="index"/>
+    <file name="u3250-6_2x.png" crc="281589109" ref="index"/>
+    <file name="u3262_states.png" crc="3968315075" ref="index"/>
+    <file name="u3262_states_2x.png" crc="379848091" ref="index"/>
+    <file name="u3262_states-r.png" crc="3888137966" ref="index"/>
+    <file name="u3262_states-r_2x.png" crc="3785146702" ref="index"/>
+    <file name="u3262_states-m.png" crc="4128016999" ref="index"/>
+    <file name="u3262_states-m_2x.png" crc="4262088086" ref="index"/>
+    <file name="u4231-4.png" crc="530594911" ref="index"/>
+    <file name="u4231-4_2x.png" crc="210816202" ref="index"/>
+    <file name="u4229-4.png" crc="4169838757" ref="index"/>
+    <file name="u4229-4_2x.png" crc="3810141177" ref="index"/>
+    <file name="u4230-4.png" crc="161923311" ref="index"/>
+    <file name="u4230-4_2x.png" crc="4834045" ref="index"/>
+    <file name="fastwork-all-members.png" crc="308195208" ref="ติดต่อเรา"/>
+    <file name="fastwork-all-members_2x.png" crc="7994442" ref="ติดต่อเรา"/>
+    <file name="u4240-4.png" crc="530594911" ref="ติดต่อเรา"/>
+    <file name="u4240-4_2x.png" crc="210816202" ref="ติดต่อเรา"/>
+    <file name="u4238-4.png" crc="3999940498" ref="ติดต่อเรา"/>
+    <file name="u4238-4_2x.png" crc="3759285819" ref="ติดต่อเรา"/>
+    <file name="u4239-4.png" crc="3899626191" ref="ติดต่อเรา"/>
+    <file name="u4239-4_2x.png" crc="4051180647" ref="ติดต่อเรา"/>
+    <file name="facebook.png" crc="4257007166" ref="ติดต่อเรา"/>
+    <file name="facebook_2x.png" crc="123187861" ref="ติดต่อเรา"/>
+    <file name="u4023-4.png" crc="170248000" ref="ติดต่อเรา"/>
+    <file name="u4023-4_2x.png" crc="223856544" ref="ติดต่อเรา"/>
+    <file name="twitter.svg" crc="4249401966" ref="ติดต่อเรา"/>
+    <file name="twitter_poster_u3972.png" crc="210590597" ref="ติดต่อเรา"/>
+    <file name="u4051-4.png" crc="170248000" ref="ติดต่อเรา"/>
+    <file name="u4051-4_2x.png" crc="223856544" ref="ติดต่อเรา"/>
+    <file name="mail.png" crc="4244749926" ref="ติดต่อเรา"/>
+    <file name="mail_2x.png" crc="3988682479" ref="ติดต่อเรา"/>
+    <file name="u4054-4.png" crc="277529637" ref="ติดต่อเรา"/>
+    <file name="u4054-4_2x.png" crc="3944709102" ref="ติดต่อเรา"/>
+    <file name="cloud2jpg.jpg" crc="3956396514" ref="ติดต่อเรา"/>
+    <file name="cloud2jpg_2x.jpg" crc="287602766" ref="ติดต่อเรา"/>
+    <file name="cloud-u4313-fr.png" crc="411253012" ref="ติดต่อเรา"/>
+    <file name="cloud-u4313-fr_2x.png" crc="3773462269" ref="ติดต่อเรา"/>
+    <file name="town.png" crc="3901797674" ref="ติดต่อเรา"/>
+    <file name="หน้า-static.png" crc="355975276" ref="ติดต่อเรา"/>
+  </folder>
+  <file name="index.html" crc="342015420" seo="true" mt="1493838980785" redirect="true"/>
+  <file name="ติดต่อเรา.html" crc="50447375" seo="true" mt="1493839626328" redirect="true"/>
+</manifest>
